@@ -1,0 +1,716 @@
+---
+title: 'Contact Wild Heat Saunas | Free Sauna Quote Ireland'
+description: 'Contact Wild Heat Saunas for a fast free quote on your custom home sauna build across Ireland. Call, WhatsApp or fill in our quick quote form today.'
+preloadImg: '/assets/images/contact-hero.jpg'
+permalink: '/contact/'
+eleventyNavigation:
+  key: Contact
+  order: 500
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<style>
+  :root {
+    --pd-cedar: #A0522D;
+    --pd-cedar-light: #C8843A;
+    --pd-teal: #D97620;
+    --pd-teal-light: #E89A52;
+    --pd-teal-muted: #F5EDE0;
+    --pd-ink: #14110D;
+    --pd-ink-soft: #3A342C;
+    --pd-off-white: #F8F6F2;
+    --pd-warm-white: #FDFBF8;
+    --pd-slate: #4A4A4F;
+    --pd-slate-light: #8E8E93;
+    --pd-shadow-warm: 0 8px 40px rgba(100, 60, 20, 0.10);
+    --pd-shadow-soft: 0 4px 24px rgba(30, 30, 30, 0.07);
+    --pd-font-display: 'Fraunces', serif;
+    --pd-font-body: 'DM Sans', sans-serif;
+    --pd-radius-card: 14px;
+    --pd-radius-btn: 8px;
+  }
+
+  .wild-heat-saunas-contact *,
+  .wild-heat-saunas-contact *::before,
+  .wild-heat-saunas-contact *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .wild-heat-saunas-contact {
+    font-family: var(--pd-font-body);
+    color: var(--pd-ink);
+    background: var(--pd-warm-white);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HERO ─────────────────────────────────────── */
+  .wild-heat-saunas-contact .contact-hero {
+    background: var(--pd-ink);
+    background-image:
+      radial-gradient(ellipse at 70% 50%, rgba(217, 118, 32, 0.18) 0%, transparent 65%),
+      radial-gradient(ellipse at 20% 80%, rgba(160, 82, 45, 0.15) 0%, transparent 55%);
+    padding: 80px 24px 72px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .wild-heat-saunas-contact .contact-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('/assets/images/contact-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.18;
+    pointer-events: none;
+  }
+
+  .wild-heat-saunas-contact .hero-eyebrow {
+    display: inline-block;
+    font-family: var(--pd-font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--pd-teal-light);
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .wild-heat-saunas-contact .contact-hero h1 {
+    font-family: var(--pd-font-display);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    color: var(--pd-warm-white);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 18px;
+    position: relative;
+  }
+
+  .wild-heat-saunas-contact .hero-subline {
+    font-size: 1.05rem;
+    color: rgba(253, 251, 248, 0.75);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.65;
+    position: relative;
+  }
+
+  .wild-heat-saunas-contact .hero-subline strong {
+    color: var(--pd-teal-light);
+    font-weight: 600;
+  }
+
+  /* ── CONTACT GRID ─────────────────────────────── */
+  .wild-heat-saunas-contact .contact-grid-section {
+    background: var(--pd-off-white);
+    padding: 72px 24px 80px;
+  }
+
+  .wild-heat-saunas-contact .contact-grid-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  /* FORM COLUMN */
+  .wild-heat-saunas-contact .form-col {
+    background: var(--pd-warm-white);
+    border-radius: var(--pd-radius-card);
+    padding: 40px 32px;
+    box-shadow: var(--pd-shadow-warm);
+    border: 1px solid rgba(160, 82, 45, 0.08);
+  }
+
+  .wild-heat-saunas-contact .col-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--pd-teal);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .wild-heat-saunas-contact .form-col h2 {
+    font-family: var(--pd-font-display);
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    font-weight: 700;
+    color: var(--pd-ink);
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .wild-heat-saunas-contact .form-intro {
+    font-size: 0.95rem;
+    color: var(--pd-slate);
+    margin-bottom: 28px;
+    line-height: 1.6;
+  }
+
+  .wild-heat-saunas-contact .quote-form .form-group {
+    margin-bottom: 20px;
+  }
+
+  .wild-heat-saunas-contact .quote-form label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--pd-ink-soft);
+    margin-bottom: 6px;
+    letter-spacing: 0.02em;
+  }
+
+  .wild-heat-saunas-contact .quote-form input,
+  .wild-heat-saunas-contact .quote-form textarea {
+    width: 100%;
+    font-family: var(--pd-font-body);
+    font-size: 1rem;
+    color: var(--pd-ink);
+    background: var(--pd-off-white);
+    border: 1.5px solid rgba(217, 118, 32, 0.25);
+    border-radius: 8px;
+    padding: 14px 16px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .wild-heat-saunas-contact .quote-form input:focus,
+  .wild-heat-saunas-contact .quote-form textarea:focus {
+    outline: none;
+    border-color: var(--pd-teal);
+    box-shadow: 0 0 0 3px rgba(217, 118, 32, 0.15);
+  }
+
+  .wild-heat-saunas-contact .quote-form textarea {
+    resize: vertical;
+    min-height: 130px;
+  }
+
+  .wild-heat-saunas-contact .btn-submit {
+    display: inline-block;
+    width: 100%;
+    font-family: var(--pd-font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--pd-warm-white);
+    background: var(--pd-cedar);
+    border: none;
+    border-radius: var(--pd-radius-btn);
+    padding: 16px 24px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 18px rgba(160, 82, 45, 0.28);
+    margin-top: 4px;
+  }
+
+  .wild-heat-saunas-contact .btn-submit:hover {
+    background: var(--pd-cedar-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(160, 82, 45, 0.34);
+  }
+
+  .wild-heat-saunas-contact .btn-submit:focus-visible {
+    outline: 3px solid var(--pd-teal);
+    outline-offset: 3px;
+  }
+
+  /* DETAILS COLUMN */
+  .wild-heat-saunas-contact .details-col {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .wild-heat-saunas-contact .details-card {
+    background: var(--pd-ink);
+    background-image:
+      radial-gradient(ellipse at 90% 10%, rgba(217, 118, 32, 0.20) 0%, transparent 55%),
+      radial-gradient(ellipse at 10% 90%, rgba(160, 82, 45, 0.15) 0%, transparent 50%);
+    border-radius: var(--pd-radius-card);
+    padding: 36px 30px;
+    color: var(--pd-warm-white);
+  }
+
+  .wild-heat-saunas-contact .details-card .col-eyebrow {
+    color: var(--pd-teal-light);
+  }
+
+  .wild-heat-saunas-contact .details-card h2 {
+    font-family: var(--pd-font-display);
+    font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+    font-weight: 700;
+    color: var(--pd-warm-white);
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    line-height: 1.2;
+  }
+
+  .wild-heat-saunas-contact .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+
+  .wild-heat-saunas-contact .contact-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .wild-heat-saunas-contact .contact-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(217, 118, 32, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+  }
+
+  .wild-heat-saunas-contact .contact-item-body {
+    flex: 1;
+  }
+
+  .wild-heat-saunas-contact .contact-item-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: rgba(253, 251, 248, 0.5);
+    margin-bottom: 3px;
+    display: block;
+  }
+
+  .wild-heat-saunas-contact .contact-item-value {
+    font-size: 0.97rem;
+    color: var(--pd-warm-white);
+    line-height: 1.5;
+  }
+
+  .wild-heat-saunas-contact .contact-item-value a {
+    color: var(--pd-teal-light);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+  }
+
+  .wild-heat-saunas-contact .contact-item-value a:hover {
+    color: var(--pd-warm-white);
+  }
+
+  .wild-heat-saunas-contact .contact-item-value a:focus-visible {
+    outline: 2px solid var(--pd-teal-light);
+    outline-offset: 2px;
+    border-radius: 3px;
+  }
+
+  .wild-heat-saunas-contact .divider-rule {
+    border: none;
+    border-top: 1px solid rgba(253, 251, 248, 0.10);
+    margin: 20px 0;
+  }
+
+  .wild-heat-saunas-contact .hours-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 16px;
+    font-size: 0.88rem;
+  }
+
+  .wild-heat-saunas-contact .hours-day {
+    color: rgba(253, 251, 248, 0.55);
+    font-weight: 500;
+  }
+
+  .wild-heat-saunas-contact .hours-time {
+    color: var(--pd-warm-white);
+    font-weight: 600;
+  }
+
+  /* RATING STRIP */
+  .wild-heat-saunas-contact .rating-strip {
+    background: var(--pd-teal-muted);
+    border-radius: var(--pd-radius-card);
+    padding: 22px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .wild-heat-saunas-contact .rating-stars {
+    color: #FBBF24;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    flex-shrink: 0;
+  }
+
+  .wild-heat-saunas-contact .rating-text {
+    font-size: 0.88rem;
+    color: var(--pd-ink-soft);
+    line-height: 1.45;
+  }
+
+  .wild-heat-saunas-contact .rating-text strong {
+    color: var(--pd-ink);
+    font-weight: 700;
+  }
+
+  /* ── MAP SECTION ──────────────────────────────── */
+  .wild-heat-saunas-contact .map-section {
+    background: var(--pd-warm-white);
+    padding: 0 24px 80px;
+  }
+
+  .wild-heat-saunas-contact .map-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .wild-heat-saunas-contact .map-embed-wrap {
+    border-radius: var(--pd-radius-card);
+    overflow: hidden;
+    box-shadow: var(--pd-shadow-soft);
+    background: var(--pd-off-white);
+    aspect-ratio: 16/7;
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(217, 118, 32, 0.15);
+  }
+
+  .wild-heat-saunas-contact .map-embed-wrap iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+
+  .wild-heat-saunas-contact .map-placeholder-text {
+    color: var(--pd-slate-light);
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 24px;
+  }
+
+  /* ── SERVICE AREA STRIP ───────────────────────── */
+  .wild-heat-saunas-contact .area-strip {
+    background: var(--pd-off-white);
+    padding: 56px 24px 60px;
+    border-top: 1px solid rgba(217, 118, 32, 0.12);
+  }
+
+  .wild-heat-saunas-contact .area-strip-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .wild-heat-saunas-contact .area-strip-inner .col-eyebrow {
+    color: var(--pd-teal);
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .wild-heat-saunas-contact .area-strip-inner h2 {
+    font-family: var(--pd-font-display);
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
+    font-weight: 700;
+    color: var(--pd-ink);
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+
+  .wild-heat-saunas-contact .area-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .wild-heat-saunas-contact .area-tag {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--pd-teal);
+    background: rgba(217, 118, 32, 0.12);
+    border: 1px solid rgba(217, 118, 32, 0.22);
+    border-radius: 100px;
+    padding: 6px 16px;
+    white-space: nowrap;
+  }
+
+  .wild-heat-saunas-contact .area-cta-note {
+    font-size: 0.92rem;
+    color: var(--pd-slate);
+    line-height: 1.6;
+  }
+
+  .wild-heat-saunas-contact .area-cta-note a {
+    color: var(--pd-cedar);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .wild-heat-saunas-contact .area-cta-note a:hover {
+    color: var(--pd-cedar-light);
+  }
+
+  /* ── RESPONSIVE ───────────────────────────────── */
+  @media (min-width: 768px) {
+    .wild-heat-saunas-contact .contact-grid-inner {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .wild-heat-saunas-contact .contact-grid-inner {
+      grid-template-columns: 3fr 2fr;
+      gap: 56px;
+    }
+
+    .wild-heat-saunas-contact .contact-hero {
+      padding: 100px 24px 90px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wild-heat-saunas-contact .btn-submit,
+    .wild-heat-saunas-contact .contact-item-value a {
+      transition: none;
+    }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      "name": "Contact Wild Heat Saunas",
+      "description": "Contact Wild Heat Saunas for a fast free quote on your custom home sauna build across Ireland.",
+      "url": "https://wildheatsaunas.ie/contact/",
+      "inLanguage": "en-IE"
+    },
+    {
+      "@type": "LocalBusiness",
+      "name": "Wild Heat Saunas",
+      "description": "We design and build luxury custom home saunas across Ireland.",
+      "url": "https://wildheatsaunas.ie",
+      "telephone": "+353876712695",
+      "email": "test@test.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Galway",
+        "addressCountry": "IE"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Ireland"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "13:00"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "10"
+      },
+      "sameAs": []
+    }
+  ]
+}
+</script>
+
+<div class="wild-heat-saunas-contact">
+
+  <!-- HERO -->
+  <section class="contact-hero" aria-labelledby="contact-h1">
+    <span class="hero-eyebrow">Get in Touch</span>
+    <h1 id="contact-h1">Get Your Fast Free Quote</h1>
+    <p class="hero-subline">We typically respond <strong>within a few hours</strong>. Fill in the form below, call us, or drop us a WhatsApp — whatever suits you best.</p>
+  </section>
+
+  <!-- CONTACT GRID -->
+  <section class="contact-grid-section" aria-labelledby="form-heading">
+    <div class="contact-grid-inner">
+
+      <!-- FORM -->
+      <div class="form-col">
+        <span class="col-eyebrow">Free Quote Request</span>
+        <h2 id="form-heading">Tell Us About Your Sauna</h2>
+        <p class="form-intro">A few quick details and we'll come back to you with a tailored quote — no obligation, no hard sell.</p>
+
+        <form class="quote-form" name="quote-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="quote-contact">
+          <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
+
+          <div class="form-group">
+            <label for="full-name">Your Name</label>
+            <input type="text" id="full-name" name="name" placeholder="Laura Murphy" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="laura@example.ie" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+353 8X XXX XXXX" required>
+          </div>
+
+          <div class="form-group">
+            <label for="eircode">Eircode / Postcode</label>
+            <input type="text" id="eircode" name="eircode" placeholder="H91 XXXX" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Tell Us More</label>
+            <textarea id="message" name="message" placeholder="Where you're thinking of putting the sauna, rough size, any particular style ideas…" required></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Send My Quote Request</button>
+        </form>
+      </div>
+
+      <!-- DETAILS -->
+      <div class="details-col">
+        <div class="details-card">
+          <span class="col-eyebrow">Contact Details</span>
+          <h2>Prefer to Talk?</h2>
+
+          <div class="contact-item">
+            <span class="contact-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.81 19.79 19.79 0 01.02 2.2 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg></span>
+            <div class="contact-item-body">
+              <span class="contact-item-label">Call Us</span>
+              <div class="contact-item-value">
+                <a href="tel:+353876712695">+353 87 671 2695</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span>
+            <div class="contact-item-body">
+              <span class="contact-item-label">WhatsApp</span>
+              <div class="contact-item-value">
+                <a href="https://wa.me/353876712695" target="_blank" rel="noopener noreferrer">Message us on WhatsApp</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+            <div class="contact-item-body">
+              <span class="contact-item-label">Email</span>
+              <div class="contact-item-value">
+                <a href="mailto:test@test.com">test@test.com</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div class="contact-item-body">
+              <span class="contact-item-label">Based In</span>
+              <div class="contact-item-value">Galway, Ireland<br>Serving all of Ireland</div>
+            </div>
+          </div>
+
+          <hr class="divider-rule">
+
+          <div class="contact-item">
+            <span class="contact-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+            <div class="contact-item-body">
+              <span class="contact-item-label">Business Hours <!-- VERIFY hours --></span>
+              <div class="hours-grid">
+                <span class="hours-day">Mon – Fri</span>
+                <span class="hours-time">8:00 – 18:00</span>
+                <span class="hours-day">Saturday</span>
+                <span class="hours-time">9:00 – 13:00</span>
+                <span class="hours-day">Sunday</span>
+                <span class="hours-time">Closed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rating-strip">
+          <span class="rating-stars" aria-label="5 out of 5 stars">★★★★★</span>
+          <p class="rating-text"><strong>5.0 — 10 Google Reviews</strong><br>"Malcolm and the team were a pleasure to work with." — Laura, Galway</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MAP 
+  <section class="map-section" aria-label="Our location map">
+    <div class="map-inner">
+      <div class="map-embed-wrap">
+        PASTE GOOGLE MAPS EMBED IFRAME HERE 
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2381.291861403883!2d-6.2881991!3d53.355931399999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670d0aba4a27ed%3A0xc680db377172a7fc!2sThe%20Outcast%20Sauna!5e0!3m2!1sen!2sie!4v1782989786682!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+    </div>
+  </section>
+-->
+  <!-- SERVICE AREA STRIP -->
+  <section class="area-strip" aria-labelledby="area-heading">
+    <div class="area-strip-inner">
+      <span class="col-eyebrow">Where We Build</span>
+      <h2 id="area-heading">We Cover All of Ireland</h2>
+      <div class="area-tags">
+        <span class="area-tag">Galway</span>
+        <span class="area-tag">Dublin</span>
+        <span class="area-tag">Cork</span>
+        <span class="area-tag">Limerick</span>
+        <span class="area-tag">Kilkenny</span>
+        <span class="area-tag">Waterford</span>
+        <span class="area-tag">Wicklow</span>
+        <span class="area-tag">Mayo</span>
+        <span class="area-tag">Clare</span>
+        <span class="area-tag">Sligo</span>
+        <span class="area-tag">Donegal</span>
+        <span class="area-tag">Kerry</span>
+        <span class="area-tag">Wexford</span>
+        <span class="area-tag">Tipperary</span>
+      </div>
+      <p class="area-cta-note">Not sure if we cover your area? <a href="/area/">See our full service areas</a> or just give us a call — we'd love to help.</p>
+    </div>
+  </section>
+
+</div>
+{% endblock %}

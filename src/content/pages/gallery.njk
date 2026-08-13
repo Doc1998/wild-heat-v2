@@ -1,0 +1,393 @@
+---
+title: 'Sauna Gallery | Wild Heat Saunas'
+description: 'Browse photos of our custom barrel saunas, cabin saunas, sauna interiors and hot tubs built across Galway and all of Ireland.'
+preloadImg: '/assets/images/barrel-sauna1.jpeg'
+permalink: '/gallery/'
+eleventyNavigation:
+  key: Gallery
+  order: 300
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600;700&display=swap">
+{% endblock %}
+
+{% block body %}
+<style>
+  :root {
+    --pd-primary: #14110D;
+    --pd-cedar: #A0622A;
+    --pd-cedar-light: #C8864A;
+    --pd-teal: #D97620;
+    --pd-teal-light: #E89A52;
+    --pd-teal-muted: #F7EAD9;
+    --pd-warm-white: #FAF8F5;
+    --pd-off-white: #F2EDE6;
+    --pd-slate: #3A342C;
+    --pd-slate-mid: #6B6156;
+    --pd-white: #ffffff;
+    --pd-gold: #FBBF24;
+    --pd-font-display: 'Fraunces', Georgia, serif;
+    --pd-font-body: 'DM Sans', system-ui, sans-serif;
+    --pd-radius-card: 14px;
+    --pd-radius-btn: 8px;
+    --pd-shadow: 0 10px 40px rgba(28, 31, 38, 0.08);
+    --pd-shadow-warm: 0 8px 32px rgba(160, 98, 42, 0.12);
+  }
+
+  .wild-heat-saunas-gallery *,
+  .wild-heat-saunas-gallery *::before,
+  .wild-heat-saunas-gallery *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .wild-heat-saunas-gallery {
+    font-family: var(--pd-font-body);
+    color: var(--pd-primary);
+    background: var(--pd-warm-white);
+    line-height: 1.7;
+  }
+
+  .wild-heat-saunas-gallery h1,
+  .wild-heat-saunas-gallery h2 {
+    font-family: var(--pd-font-display);
+    line-height: 1.15;
+    color: var(--pd-primary);
+  }
+
+  .wild-heat-saunas-gallery .eyebrow {
+    display: inline-block;
+    font-family: var(--pd-font-body);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--pd-teal);
+    margin-bottom: 0.9rem;
+  }
+
+  .wild-heat-saunas-gallery .eyebrow--white {
+    color: var(--pd-teal-light);
+  }
+
+  .wild-heat-saunas-gallery .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--pd-font-body);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.85rem 1.8rem;
+    border-radius: var(--pd-radius-btn);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  }
+
+  .wild-heat-saunas-gallery .btn-primary {
+    background: var(--pd-cedar);
+    color: var(--pd-white);
+    border-color: var(--pd-cedar);
+    box-shadow: 0 4px 18px rgba(160, 98, 42, 0.3);
+  }
+
+  .wild-heat-saunas-gallery .btn-primary:hover {
+    background: var(--pd-cedar-light);
+    border-color: var(--pd-cedar-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(160, 98, 42, 0.35);
+  }
+
+  /* ── GALLERY HERO ── */
+  .wild-heat-saunas-gallery .gallery-hero {
+    background: var(--pd-primary);
+    color: var(--pd-white);
+    text-align: center;
+    padding: 6rem 1.5rem 3.5rem;
+  }
+
+  .wild-heat-saunas-gallery .gallery-hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    color: var(--pd-white);
+    margin-bottom: 0.8rem;
+  }
+
+  .wild-heat-saunas-gallery .gallery-hero p {
+    color: rgba(255,255,255,0.75);
+    max-width: 40rem;
+    margin: 0 auto;
+    font-size: 1rem;
+  }
+
+  /* ── FILTERS + GRID ── */
+  .wild-heat-saunas-gallery .gallery-section {
+    padding: 3.5rem 1.5rem 5rem;
+    background: var(--pd-off-white);
+  }
+
+  .wild-heat-saunas-gallery .gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .wild-heat-saunas-gallery .gallery-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .wild-heat-saunas-gallery .filter-btn {
+    font-family: var(--pd-font-body);
+    border: 2px solid var(--pd-teal);
+    background: var(--pd-white);
+    color: var(--pd-primary);
+    padding: 0.5rem 1.1rem;
+    border-radius: 40px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .wild-heat-saunas-gallery .filter-btn:hover {
+    background: var(--pd-teal-muted);
+  }
+
+  .wild-heat-saunas-gallery .filter-btn.is-active {
+    background: var(--pd-teal);
+    color: var(--pd-white);
+  }
+
+  .wild-heat-saunas-gallery .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  @media (min-width: 560px) {
+    .wild-heat-saunas-gallery .gallery-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (min-width: 900px) {
+    .wild-heat-saunas-gallery .gallery-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .wild-heat-saunas-gallery .gallery-item {
+    aspect-ratio: 4 / 3;
+    border-radius: var(--pd-radius-card);
+    overflow: hidden;
+    box-shadow: var(--pd-shadow);
+  }
+
+  .wild-heat-saunas-gallery .gallery-item.is-hidden {
+    display: none;
+  }
+
+  .wild-heat-saunas-gallery .gallery-item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .wild-heat-saunas-gallery .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+  }
+
+  .wild-heat-saunas-gallery .gallery-item:hover img {
+    transform: scale(1.05);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wild-heat-saunas-gallery .gallery-item img { transition: none; }
+  }
+
+  /* ── LIGHTBOX ── */
+  .wild-heat-saunas-gallery .gallery-lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 17, 13, 0.94);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    padding: 2rem;
+  }
+
+  .wild-heat-saunas-gallery .gallery-lightbox[hidden] {
+    display: none;
+  }
+
+  .wild-heat-saunas-gallery .gallery-lightbox img {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: 8px;
+  }
+
+  .wild-heat-saunas-gallery .gallery-lightbox-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--pd-white);
+    font-size: 2.5rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  /* ── CTA STRIP ── */
+  .wild-heat-saunas-gallery .gallery-cta {
+    text-align: center;
+    padding: 4rem 1.5rem;
+    background: var(--pd-teal-muted);
+  }
+
+  .wild-heat-saunas-gallery .gallery-cta h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    margin-bottom: 0.8rem;
+  }
+
+  .wild-heat-saunas-gallery .gallery-cta p {
+    color: var(--pd-slate);
+    margin-bottom: 1.6rem;
+    max-width: 32rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
+
+{% set galleryCategories = [
+  { slug: "barrel-sauna", label: "Barrel Saunas", count: 47, ext: "jpeg", alt: "Wild Heat Saunas barrel sauna" },
+  { slug: "sauna-interior", label: "Sauna Interiors", count: 18, ext: "jpeg", alt: "Sauna interior with benches and stove" },
+  { slug: "hot-tub", label: "Hot Tubs", count: 9, ext: "jpeg", alt: "Wood-fired hot tub" },
+  { slug: "cabin-sauna", label: "Cabin Saunas", count: 5, ext: "jpeg", alt: "Cabin-style sauna" },
+  { slug: "trailer-mobile-sauna", label: "Mobile Trailer Saunas", count: 2, ext: "jpeg", alt: "Mobile sauna trailer unit" },
+  { slug: "sauna-build", label: "Build Process", count: 2, ext: "jpeg", alt: "Sauna build in progress" }
+] %}
+
+<div class="wild-heat-saunas-gallery">
+
+  <!-- ══ GALLERY HERO ══ -->
+  <section class="gallery-hero" aria-labelledby="gallery-h1">
+    <span class="eyebrow eyebrow--white">Our Work</span>
+    <h1 id="gallery-h1">Sauna Gallery</h1>
+    <p>Barrel saunas, cabin builds, interiors and hot tubs — real installations across Galway and the rest of Ireland.</p>
+  </section>
+
+  <!-- ══ FILTERS + GRID ══ -->
+  <section class="gallery-section" aria-labelledby="gallery-grid-h2">
+    <h2 class="visually-hidden" id="gallery-grid-h2" style="position:absolute; width:1px; height:1px; overflow:hidden;">Gallery Images</h2>
+    <div class="gallery-container">
+
+      <div class="gallery-filters" role="tablist" aria-label="Filter gallery by category">
+        <button class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+        {% for cat in galleryCategories %}
+        <button class="filter-btn" data-filter="{{ cat.slug }}" role="tab" aria-selected="false">{{ cat.label }}</button>
+        {% endfor %}
+      </div>
+
+      <div class="gallery-grid">
+        {% for cat in galleryCategories %}
+          {% for i in range(1, cat.count + 1) %}
+          <figure class="gallery-item" data-category="{{ cat.slug }}">
+            <a href="/assets/images/{{ cat.slug }}{{ i }}.{{ cat.ext }}" data-lightbox>
+              <img
+                src="/assets/images/{{ cat.slug }}{{ i }}.{{ cat.ext }}"
+                alt="{{ cat.alt }} {{ i }}"
+                width="480"
+                height="360"
+                loading="lazy"
+              >
+            </a>
+          </figure>
+          {% endfor %}
+        {% endfor %}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ LIGHTBOX ══ -->
+  <div class="gallery-lightbox" hidden>
+    <button class="gallery-lightbox-close" aria-label="Close">&times;</button>
+    <img src="" alt="">
+  </div>
+
+  <!-- ══ CTA STRIP ══ -->
+  <section class="gallery-cta" aria-labelledby="gallery-cta-h2">
+    <h2 id="gallery-cta-h2">Like What You See?</h2>
+    <p>Every build here started with a free, no-obligation quote. Yours could be next.</p>
+    <a href="/contact/" class="btn btn-primary">Get a Fast Free Quote</a>
+  </section>
+
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var filterBtns = document.querySelectorAll(".wild-heat-saunas-gallery .filter-btn");
+    var items = document.querySelectorAll(".wild-heat-saunas-gallery .gallery-item");
+
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        filterBtns.forEach(function (b) {
+          b.classList.remove("is-active");
+          b.setAttribute("aria-selected", "false");
+        });
+        btn.classList.add("is-active");
+        btn.setAttribute("aria-selected", "true");
+
+        var filter = btn.dataset.filter;
+        items.forEach(function (item) {
+          var match = filter === "all" || item.dataset.category === filter;
+          item.classList.toggle("is-hidden", !match);
+        });
+      });
+    });
+
+    var lightbox = document.querySelector(".wild-heat-saunas-gallery .gallery-lightbox");
+    var lightboxImg = lightbox.querySelector("img");
+    var closeBtn = lightbox.querySelector(".gallery-lightbox-close");
+
+    document.querySelectorAll(".wild-heat-saunas-gallery [data-lightbox]").forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        lightboxImg.src = link.getAttribute("href");
+        lightboxImg.alt = link.querySelector("img").alt;
+        lightbox.hidden = false;
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.hidden = true;
+      lightboxImg.src = "";
+    }
+
+    closeBtn.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", function (e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeLightbox();
+    });
+  });
+</script>
+{% endblock %}

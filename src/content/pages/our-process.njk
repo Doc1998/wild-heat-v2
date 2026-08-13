@@ -1,0 +1,1203 @@
+---
+title: 'Our Sauna Build Process | Wild Heat Saunas Ireland'
+description: 'Discover our end-to-end sauna design and build process. Wild Heat Saunas delivers luxury custom home saunas, plus pre-built barrel saunas, across Ireland. Fast free quotes — call today.'
+preloadImg: '/assets/images/sauna-hero.png'
+permalink: '/our-process/'
+eleventyNavigation:
+  key: Our Process
+  order: 200
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600;700&display=swap">
+{% endblock %}
+
+{% block body %}
+<style>
+  :root {
+    --pd-cedar: #A0522D;
+    --pd-cedar-light: #C68B5A;
+    --pd-cedar-warm: #F5EDE0;
+    --pd-teal: #D97620;
+    --pd-teal-light: #E89A52;
+    --pd-teal-muted: #F5EDE0;
+    --pd-slate: #14110D;
+    --pd-slate-mid: #6B6156;
+    --pd-off-white: #FAF8F5;
+    --pd-white: #ffffff;
+    --pd-hairline: rgba(20,17,13,0.12);
+    --pd-shadow-warm: 0 8px 40px rgba(100,60,20,0.09);
+    --pd-font-display: 'Fraunces', serif;
+    --pd-font-body: 'DM Sans', sans-serif;
+  }
+
+  .wild-heat-saunas-our-process *,
+  .wild-heat-saunas-our-process *::before,
+  .wild-heat-saunas-our-process *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .wild-heat-saunas-our-process {
+    font-family: var(--pd-font-body);
+    color: var(--pd-slate);
+    background: var(--pd-off-white);
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ─────────────────────────────────────────────── */
+  .wild-heat-saunas-our-process .op-hero {
+    position: relative;
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    background: var(--pd-slate);
+    overflow: hidden;
+  }
+
+  .wild-heat-saunas-our-process .op-hero__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.38;
+  }
+
+  /* subtle steam/haze overlay */
+  .wild-heat-saunas-our-process .op-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      160deg,
+      rgba(46,58,58,0.72) 0%,
+      rgba(217, 118, 32, 0.18) 55%,
+      rgba(160,82,45,0.22) 100%
+    );
+    pointer-events: none;
+  }
+
+  .wild-heat-saunas-our-process .op-hero__inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 6rem 1.5rem 5rem;
+  }
+
+  .wild-heat-saunas-our-process .op-hero__eyebrow {
+    display: inline-block;
+    font-family: var(--pd-font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--pd-teal-light);
+    margin-bottom: 1.25rem;
+  }
+
+  .wild-heat-saunas-our-process .op-hero h1 {
+    font-family: var(--pd-font-display);
+    font-size: clamp(2.4rem, 6vw, 4.4rem);
+    font-weight: 700;
+    line-height: 1.12;
+    color: var(--pd-white);
+    max-width: 720px;
+    margin-bottom: 1.25rem;
+  }
+
+  .wild-heat-saunas-our-process .op-hero__sub {
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    color: rgba(255,255,255,0.82);
+    max-width: 540px;
+    line-height: 1.65;
+    margin-bottom: 2.4rem;
+  }
+
+  .wild-heat-saunas-our-process .op-hero__ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2.8rem;
+  }
+
+  .wild-heat-saunas-our-process .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: var(--pd-font-display);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--pd-white);
+    background: var(--pd-teal);
+    border: 2px solid var(--pd-teal);
+    padding: 0.85rem 1.9rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  }
+
+  .wild-heat-saunas-our-process .btn-primary:hover,
+  .wild-heat-saunas-our-process .btn-primary:focus-visible {
+    background: var(--pd-teal-light);
+    border-color: var(--pd-teal-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(217, 118, 32, 0.28);
+    outline: none;
+  }
+
+  .wild-heat-saunas-our-process .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: var(--pd-font-display);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--pd-white);
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.55);
+    padding: 0.85rem 1.9rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  }
+
+  .wild-heat-saunas-our-process .btn-outline:hover,
+  .wild-heat-saunas-our-process .btn-outline:focus-visible {
+    border-color: var(--pd-white);
+    background: rgba(255,255,255,0.08);
+    transform: translateY(-2px);
+    outline: none;
+  }
+
+  .wild-heat-saunas-our-process .op-hero__trust {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4rem 2.4rem;
+    list-style: none;
+  }
+
+  .wild-heat-saunas-our-process .op-hero__trust li {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.72);
+    letter-spacing: 0.04em;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .wild-heat-saunas-our-process .op-hero__trust li svg {
+    flex-shrink: 0;
+    color: var(--pd-teal-light);
+  }
+
+  /* ── INTRO / OVERVIEW ─────────────────────────────────── */
+  .wild-heat-saunas-our-process .op-intro {
+    background: var(--pd-white);
+    padding: 6rem 1.5rem;
+  }
+
+  .wild-heat-saunas-our-process .op-intro__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    align-items: center;
+  }
+
+  .wild-heat-saunas-our-process .op-intro__img-wrap {
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--pd-shadow-warm);
+    position: relative;
+  }
+
+  /* warm wood-grain shimmer overlay on image */
+  .wild-heat-saunas-our-process .op-intro__img-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(160,82,45,0.07) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .wild-heat-saunas-our-process .op-intro__img-wrap img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .wild-heat-saunas-our-process .op-intro__text .eyebrow {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--pd-teal);
+    margin-bottom: 1rem;
+  }
+
+  .wild-heat-saunas-our-process .op-intro__text h2 {
+    font-family: var(--pd-font-display);
+    font-size: clamp(1.9rem, 4vw, 2.9rem);
+    font-weight: 700;
+    line-height: 1.18;
+    color: var(--pd-slate);
+    margin-bottom: 1.4rem;
+  }
+
+  .wild-heat-saunas-our-process .op-intro__text p {
+    font-size: 1.02rem;
+    line-height: 1.78;
+    color: var(--pd-slate-mid);
+    margin-bottom: 1.1rem;
+  }
+
+  .wild-heat-saunas-our-process .op-intro__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.8rem;
+  }
+
+  .wild-heat-saunas-our-process .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--pd-slate);
+    background: var(--pd-cedar-warm);
+    border: 1px solid rgba(160,82,45,0.18);
+    border-radius: 50px;
+    padding: 0.42rem 0.9rem;
+  }
+
+  .wild-heat-saunas-our-process .badge .stars {
+    color: #C68B5A;
+  }
+
+  /* ── BENEFITS / STEPS ─────────────────────────────────── */
+  .wild-heat-saunas-our-process .op-steps {
+    background: var(--pd-teal-muted);
+    padding: 6rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* sea-haze gradient suggestion */
+  .wild-heat-saunas-our-process .op-steps::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(217, 118, 32, 0.07) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .wild-heat-saunas-our-process .op-steps__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .wild-heat-saunas-our-process .op-steps__head {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .wild-heat-saunas-our-process .op-steps__head .eyebrow {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--pd-teal);
+    margin-bottom: 0.85rem;
+  }
+
+  .wild-heat-saunas-our-process .op-steps__head h2 {
+    font-family: var(--pd-font-display);
+    font-size: clamp(1.8rem, 3.8vw, 2.7rem);
+    font-weight: 700;
+    color: var(--pd-slate);
+    line-height: 1.2;
+  }
+
+  .wild-heat-saunas-our-process .op-steps__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .wild-heat-saunas-our-process .step-card {
+    background: var(--pd-white);
+    border-radius: 14px;
+    padding: 2rem 1.8rem;
+    box-shadow: var(--pd-shadow-warm);
+    border: 1px solid var(--pd-hairline);
+    display: flex;
+    gap: 1.4rem;
+    align-items: flex-start;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .wild-heat-saunas-our-process .step-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 50px rgba(217, 118, 32, 0.13);
+  }
+
+  .wild-heat-saunas-our-process .step-card__icon {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: var(--pd-cedar-warm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--pd-cedar);
+  }
+
+  .wild-heat-saunas-our-process .step-card__body h3 {
+    font-family: var(--pd-font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--pd-slate);
+    margin-bottom: 0.45rem;
+  }
+
+  .wild-heat-saunas-our-process .step-card__body p {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--pd-slate-mid);
+  }
+
+  /* ── WHY CHOOSE US ────────────────────────────────────── */
+  .wild-heat-saunas-our-process .op-why {
+    background: var(--pd-slate);
+    padding: 6rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* wet slate texture suggestion */
+  .wild-heat-saunas-our-process .op-why::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(217, 118, 32, 0.12) 0%, transparent 50%, rgba(160,82,45,0.08) 100%);
+    pointer-events: none;
+  }
+
+  .wild-heat-saunas-our-process .op-why__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .wild-heat-saunas-our-process .op-why__head {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .wild-heat-saunas-our-process .op-why__head .eyebrow {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--pd-teal-light);
+    margin-bottom: 0.85rem;
+  }
+
+  .wild-heat-saunas-our-process .op-why__head h2 {
+    font-family: var(--pd-font-display);
+    font-size: clamp(1.8rem, 3.8vw, 2.6rem);
+    font-weight: 700;
+    color: var(--pd-white);
+    line-height: 1.2;
+  }
+
+  .wild-heat-saunas-our-process .op-why__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .wild-heat-saunas-our-process .why-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 2rem 1.8rem;
+    text-align: center;
+    transition: background 0.25s ease, border-color 0.25s ease;
+  }
+
+  .wild-heat-saunas-our-process .why-card:hover {
+    background: rgba(217, 118, 32, 0.12);
+    border-color: rgba(217, 118, 32, 0.4);
+  }
+
+  .wild-heat-saunas-our-process .why-card__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(217, 118, 32, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: var(--pd-teal-light);
+  }
+
+  .wild-heat-saunas-our-process .why-card h3 {
+    font-family: var(--pd-font-display);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--pd-white);
+    margin-bottom: 0.5rem;
+  }
+
+  .wild-heat-saunas-our-process .why-card p {
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.62);
+  }
+
+  /* ── FAQ ──────────────────────────────────────────────── */
+  .wild-heat-saunas-our-process .op-faq {
+    background: var(--pd-off-white);
+    padding: 6rem 1.5rem;
+  }
+
+  .wild-heat-saunas-our-process .op-faq__inner {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .wild-heat-saunas-our-process .op-faq__head {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .wild-heat-saunas-our-process .op-faq__head .eyebrow {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--pd-teal);
+    margin-bottom: 0.85rem;
+  }
+
+  .wild-heat-saunas-our-process .op-faq__head h2 {
+    font-family: var(--pd-font-display);
+    font-size: clamp(1.8rem, 3.8vw, 2.6rem);
+    font-weight: 700;
+    color: var(--pd-slate);
+    line-height: 1.2;
+  }
+
+  .wild-heat-saunas-our-process .faq-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .wild-heat-saunas-our-process .faq-item {
+    border-bottom: 1px solid var(--pd-hairline);
+  }
+
+  .wild-heat-saunas-our-process .faq-item:first-child {
+    border-top: 1px solid var(--pd-hairline);
+  }
+
+  .wild-heat-saunas-our-process .faq-item summary {
+    list-style: none;
+    padding: 1.4rem 0;
+    font-family: var(--pd-font-display);
+    font-size: 1.04rem;
+    font-weight: 600;
+    color: var(--pd-slate);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    transition: color 0.2s ease;
+  }
+
+  .wild-heat-saunas-our-process .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .wild-heat-saunas-our-process .faq-item summary:hover,
+  .wild-heat-saunas-our-process .faq-item summary:focus-visible {
+    color: var(--pd-teal);
+    outline: none;
+  }
+
+  .wild-heat-saunas-our-process .faq-item summary .faq-icon {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1.5px solid var(--pd-teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--pd-teal);
+    transition: transform 0.25s ease;
+  }
+
+  .wild-heat-saunas-our-process .faq-item[open] summary .faq-icon {
+    transform: rotate(45deg);
+  }
+
+  .wild-heat-saunas-our-process .faq-item .faq-answer {
+    font-size: 0.96rem;
+    line-height: 1.78;
+    color: var(--pd-slate-mid);
+    padding: 0 0 1.4rem;
+  }
+
+  /* ── CTA BAND ─────────────────────────────────────────── */
+  .wild-heat-saunas-our-process .op-cta {
+    position: relative;
+    padding: 7rem 1.5rem;
+    background: var(--pd-cedar-warm);
+    overflow: hidden;
+  }
+
+  .wild-heat-saunas-our-process .op-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, rgba(160,82,45,0.1) 0%, rgba(217, 118, 32, 0.09) 100%);
+    pointer-events: none;
+  }
+
+  /* wave-like top edge */
+  .wild-heat-saunas-our-process .op-cta::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: var(--pd-off-white);
+    clip-path: ellipse(56% 100% at 50% 0%);
+    pointer-events: none;
+  }
+
+  .wild-heat-saunas-our-process .op-cta__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .wild-heat-saunas-our-process .op-cta__inner .eyebrow {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--pd-teal);
+    margin-bottom: 0.85rem;
+  }
+
+  .wild-heat-saunas-our-process .op-cta__inner h2 {
+    font-family: var(--pd-font-display);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    color: var(--pd-slate);
+    line-height: 1.15;
+    margin-bottom: 0.85rem;
+  }
+
+  .wild-heat-saunas-our-process .op-cta__inner p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--pd-slate-mid);
+    margin-bottom: 2.4rem;
+  }
+
+  .wild-heat-saunas-our-process .op-cta-form {
+    background: var(--pd-white);
+    border-radius: 14px;
+    padding: 2.2rem 2rem;
+    box-shadow: var(--pd-shadow-warm);
+    text-align: left;
+    margin-bottom: 1.8rem;
+  }
+
+  .wild-heat-saunas-our-process .form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .wild-heat-saunas-our-process .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .wild-heat-saunas-our-process .form-group label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--pd-slate);
+    text-transform: uppercase;
+  }
+
+  .wild-heat-saunas-our-process .form-group input,
+  .wild-heat-saunas-our-process .form-group select,
+  .wild-heat-saunas-our-process .form-group textarea {
+    font-family: var(--pd-font-body);
+    font-size: 0.96rem;
+    color: var(--pd-slate);
+    background: var(--pd-off-white);
+    border: 1.5px solid var(--pd-hairline);
+    border-radius: 8px;
+    padding: 0.72rem 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+  }
+
+  .wild-heat-saunas-our-process .form-group input:focus,
+  .wild-heat-saunas-our-process .form-group select:focus,
+  .wild-heat-saunas-our-process .form-group textarea:focus {
+    border-color: var(--pd-teal);
+    box-shadow: 0 0 0 3px rgba(217, 118, 32, 0.15);
+    outline: none;
+  }
+
+  .wild-heat-saunas-our-process .form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  .wild-heat-saunas-our-process .btn-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    font-family: var(--pd-font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--pd-white);
+    background: var(--pd-teal);
+    border: none;
+    border-radius: 8px;
+    padding: 0.95rem 2rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  }
+
+  .wild-heat-saunas-our-process .btn-submit:hover,
+  .wild-heat-saunas-our-process .btn-submit:focus-visible {
+    background: var(--pd-teal-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(217, 118, 32, 0.28);
+    outline: none;
+  }
+
+  .wild-heat-saunas-our-process .op-cta__call {
+    font-size: 0.9rem;
+    color: var(--pd-slate-mid);
+  }
+
+  .wild-heat-saunas-our-process .op-cta__call a {
+    color: var(--pd-teal);
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .wild-heat-saunas-our-process .op-cta__call a:hover {
+    color: var(--pd-cedar);
+  }
+
+  /* ── RESPONSIVE ───────────────────────────────────────── */
+  @media (min-width: 768px) {
+    .wild-heat-saunas-our-process .op-intro__inner {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .wild-heat-saunas-our-process .op-steps__grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .wild-heat-saunas-our-process .op-why__grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .wild-heat-saunas-our-process .form-row {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .wild-heat-saunas-our-process .op-steps__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .wild-heat-saunas-our-process .op-why__grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wild-heat-saunas-our-process * {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "name": "Wild Heat Saunas",
+      "description": "We design and build luxury custom home saunas, plus pre-built barrel saunas, across Ireland",
+      "url": "https://wildheatsaunas.ie",
+      "telephone": "+353876712695",
+      "email": "test@test.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Galway",
+        "addressCountry": "IE"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Ireland"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "10"
+      },
+      "review": {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Laura, Galway"
+        },
+        "reviewBody": "We are very happy with our Sauna, Malcolm and the team were a pleasure to work with"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Custom Sauna Design and Build Process",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Wild Heat Saunas"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Ireland"
+      },
+      "description": "End-to-end luxury sauna design, build and installation service across Ireland, from initial consultation through to final handover.",
+      "serviceType": "Sauna Build, Design and Installation"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does the sauna build process take from start to finish?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most custom home sauna projects are completed within 4–8 weeks from the initial consultation to final handover. The timeline depends on the size and complexity of your build, timber and material lead times, and site access. We'll give you a clear project schedule at the design stage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens at the first consultation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We visit your home — or connect via video call — to understand your space, how you want to use the sauna, and your style preferences. We take measurements, discuss timber options and heating systems, and answer any questions you have. There's no obligation and no pressure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need planning permission for a home sauna in Ireland?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In most cases, an indoor home sauna or a modest garden sauna cabin does not require planning permission in Ireland, as it falls under exempted development. However, rules can vary depending on size, location and your local authority. We advise on this as part of our consultation process."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What timber options do you offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We work with premium timbers including Western Red Cedar, Thermo Aspen, Nordic Spruce and Thermo Ash, plus pinewood and thermowood on our pre-built barrel saunas. Each has different thermal properties, aroma and aesthetic character. Our team will guide you to the right choice for your climate, usage habits and design vision."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you handle the full installation or do I need other tradespeople?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We manage the entire process — design, manufacture, delivery and installation. We coordinate with electricians where a dedicated circuit is needed, so you have a single point of contact throughout. You won't be left chasing multiple contractors."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<div class="wild-heat-saunas-our-process">
+
+  <!-- ── HERO ───────────────────────────────────────────── -->
+  <section class="op-hero" aria-labelledby="hero-heading">
+    <img
+      src="/assets/images/sauna-hero.png"
+      alt="Wild Heat Saunas custom sauna build process — warm cedar interior, Ireland"
+      width="1600"
+      height="900"
+      class="op-hero__img"
+      fetchpriority="high"
+    >
+    <div class="op-hero__inner">
+      <span class="op-hero__eyebrow">Wild Heat Saunas &mdash; Ireland</span>
+      <h1 id="hero-heading">Our Process: From First Call to First Steam</h1>
+      <p class="op-hero__sub">Every luxury sauna we build starts with a conversation. Here's exactly how we take you from idea to installation — with no surprises along the way.</p>
+      <div class="op-hero__ctas">
+        <a href="/contact/" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Get a Free Quote
+        </a>
+        <a href="tel:+353876712695" class="btn-outline">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call Us Today
+        </a>
+      </div>
+      <ul class="op-hero__trust" aria-label="Trust signals">
+        <li>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span aria-label="5 star rating">★★★★★</span> 5.0 — 10 Google Reviews
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Fully Insured
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          5 Years Building Saunas Across Ireland
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Fast Free Quotes
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── INTRO / OVERVIEW ───────────────────────────────── -->
+  <section class="op-intro" aria-labelledby="intro-heading">
+    <div class="op-intro__inner">
+      <div class="op-intro__img-wrap">
+        <img
+          src="/assets/images/sauna-V.jpeg"
+          alt="Wild Heat Saunas design consultation — custom sauna plans, Galway Ireland"
+          width="640"
+          height="720"
+        >
+      </div>
+      <div class="op-intro__text">
+        <span class="eyebrow">How It Works</span>
+        <h2 id="intro-heading">A Clear Process. No Guesswork. Just a Beautiful Sauna.</h2>
+        <p>Most clients come to us having spent weeks trying to piece together what a custom sauna build actually involves. Who handles what. How long it takes. What it costs. It's exhausting — and it shouldn't be. That's exactly why we built a process that's transparent from day one.</p>
+        <p>From your first enquiry to the moment you close the sauna door and feel that first wave of cedar warmth, we're with you at every step. One team. One point of contact. Zero stress. We've delivered luxury home saunas — bespoke and pre-built — right across Ireland for over five years, and every single build follows the same careful, considered process.</p>
+        <div class="op-intro__badges" aria-label="Trust badges">
+          <span class="badge">
+            <span class="stars" aria-label="5 star rating">★★★★★</span>
+            5.0 Rating
+          </span>
+          <span class="badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Fully Insured
+          </span>
+          <span class="badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            5 Years Experience
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BENEFITS / STEPS ───────────────────────────────── -->
+  <section class="op-steps" aria-labelledby="steps-heading">
+    <div class="op-steps__inner">
+      <div class="op-steps__head">
+        <span class="eyebrow">Step by Step</span>
+        <h2 id="steps-heading">What Our Process Includes</h2>
+      </div>
+      <div class="op-steps__grid">
+
+        <article class="step-card">
+          <div class="step-card__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div class="step-card__body">
+            <h3>1. Free Consultation</h3>
+            <p>We visit your home or connect via video call. No obligation. We listen, measure, and understand exactly what you want — indoor, outdoor, barrel or cabin, bespoke or pre-built.</p>
+          </div>
+        </article>
+
+        <article class="step-card">
+          <div class="step-card__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+          </div>
+          <div class="step-card__body">
+            <h3>2. Design & Specification</h3>
+            <p>We create a detailed design plan including timber choice, heater spec, bench layout and finishes. You sign off before a single piece of wood is cut.</p>
+          </div>
+        </article>
+
+        <article class="step-card">
+          <div class="step-card__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/></svg>
+          </div>
+          <div class="step-card__body">
+            <h3>3. Clear Quote</h3>
+            <p>A fixed-price quote with no hidden costs. You know exactly what you're getting and what it costs before any work begins. Simple as that.</p>
+          </div>
+        </article>
+
+        <article class="step-card">
+          <div class="step-card__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+          </div>
+          <div class="step-card__body">
+            <h3>4. Skilled Build</h3>
+            <p>Our team crafts and builds your sauna with care — whether that's in our workshop or on-site. Premium materials, tight joinery, no shortcuts.</p>
+          </div>
+        </article>
+
+        <article class="step-card">
+          <div class="step-card__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div class="step-card__body">
+            <h3>5. Installation & Wiring</h3>
+            <p>We handle full installation including coordinating the electrical connection. You won't need to chase anyone — one team, start to finish.</p>
+          </div>
+        </article>
+
+        <article class="step-card">
+          <div class="step-card__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="step-card__body">
+            <h3>6. Handover & Aftercare</h3>
+            <p>We walk you through everything — how to use your heater, maintain your timber, and get the best from your sauna. And we're always at the end of the phone.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+  <!-- ── CTA BAND ───────────────────────────────────────── -->
+  <section class="op-cta" aria-labelledby="cta-heading">
+    <div class="op-cta__inner">
+      <span class="eyebrow">Start Today</span>
+      <h2 id="cta-heading">Ready to Begin Your Sauna Journey?</h2>
+      <p>Fast free quotes across Ireland. No obligation — just an honest conversation about your project.</p>
+
+      <div class="op-cta-form">
+        <form name="quote-our-process" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="quote-our-process">
+          <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="op-name">Your Name</label>
+              <input type="text" id="op-name" name="name" placeholder="e.g. Seán Murphy" required>
+            </div>
+            <div class="form-group">
+              <label for="op-phone">Phone Number</label>
+              <input type="tel" id="op-phone" name="phone" placeholder="e.g. +353 87 671 2695" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="op-email">Email Address</label>
+              <input type="email" id="op-email" name="email" placeholder="you@example.ie" required>
+            </div>
+            <div class="form-group">
+              <label for="op-location">Your County</label>
+              <input type="text" id="op-location" name="location" placeholder="e.g. Galway" required>
+            </div>
+          </div>
+          <div class="form-row" style="grid-template-columns: 1fr;">
+            <div class="form-group">
+              <label for="op-message">Tell Us About Your Project</label>
+              <textarea id="op-message" name="message" placeholder="Indoor or outdoor? Rough size? Any specific ideas?" required></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn-submit">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Send My Free Quote Request
+          </button>
+        </form>
+      </div>
+
+      <p class="op-cta__call">Prefer to talk? Call us now on <a href="tel:+353876712695">+353 87 671 2695</a> — we're happy to help.</p>
+    </div>
+  </section>
+  <!-- ── WHY CHOOSE US ──────────────────────────────────── -->
+  <section class="op-why" aria-labelledby="why-heading">
+    <div class="op-why__inner">
+      <div class="op-why__head">
+        <span class="eyebrow">Why Wild Heat Saunas</span>
+        <h2 id="why-heading">Built Different. Built to Last.</h2>
+      </div>
+      <div class="op-why__grid">
+
+        <div class="why-card">
+          <div class="why-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <h3>5.0 Google Rating</h3>
+          <p>Ten five-star reviews from homeowners across Ireland. We let our work — and our clients — do the talking.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Fully Insured</h3>
+          <p>Every project is fully covered. You have complete peace of mind from consultation right through to completion.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>5 Years of Expertise</h3>
+          <p>Half a decade building bespoke and pre-built saunas across Ireland. We've refined our process so yours runs like clockwork.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>All-Ireland Service</h3>
+          <p>Based in Galway, we build luxury saunas from Cork to Donegal. Wherever you are in Ireland, we'll come to you.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── FAQ ────────────────────────────────────────────── -->
+  <section class="op-faq" aria-labelledby="faq-heading">
+    <div class="op-faq__inner">
+      <div class="op-faq__head">
+        <span class="eyebrow">Common Questions</span>
+        <h2 id="faq-heading">Your Questions, Answered</h2>
+      </div>
+      <ul class="faq-list" role="list">
+
+        <li class="faq-item">
+          <details>
+            <summary>
+              How long does the sauna build process take from start to finish?
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              </span>
+            </summary>
+            <p class="faq-answer">Most custom home sauna projects are completed within 4–8 weeks from the initial consultation to final handover. The timeline depends on the size and complexity of your build, timber and material lead times, and site access. We'll give you a clear project schedule at the design stage.</p>
+          </details>
+        </li>
+
+        <li class="faq-item">
+          <details>
+            <summary>
+              What happens at the first consultation?
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              </span>
+            </summary>
+            <p class="faq-answer">We visit your home — or connect via video call — to understand your space, how you want to use the sauna, and your style preferences. We take measurements, discuss timber options and heating systems, and answer any questions you have. There's no obligation and no pressure.</p>
+          </details>
+        </li>
+
+        <li class="faq-item">
+          <details>
+            <summary>
+              Do I need planning permission for a home sauna in Ireland?
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              </span>
+            </summary>
+            <p class="faq-answer">In most cases, an indoor home sauna or a modest garden sauna cabin does not require planning permission in Ireland, as it falls under exempted development. However, rules can vary depending on size, location and your local authority. We advise on this as part of our consultation process.</p>
+          </details>
+        </li>
+
+        <li class="faq-item">
+          <details>
+            <summary>
+              What timber options do you offer?
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              </span>
+            </summary>
+            <p class="faq-answer">We work with premium timbers including Western Red Cedar, Thermo Aspen, Nordic Spruce and Thermo Ash, plus pinewood and thermowood on our pre-built barrel saunas. Each has different thermal properties, aroma and aesthetic character. Our team will guide you to the right choice for your climate, usage habits and design vision.</p>
+          </details>
+        </li>
+
+        <li class="faq-item">
+          <details>
+            <summary>
+              Do you handle the full installation or do I need other tradespeople?
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              </span>
+            </summary>
+            <p class="faq-answer">We manage the entire process — design, manufacture, delivery and installation. We coordinate with electricians where a dedicated circuit is needed, so you have a single point of contact throughout. You won't be left chasing multiple contractors.</p>
+          </details>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+
+</div>
+{% endblock %}

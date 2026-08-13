@@ -1,0 +1,335 @@
+---
+title: 'Privacy Policy | Wild Heat Saunas'
+description: 'Read the Wild Heat Saunas privacy policy. We explain how we collect, use and protect your personal data when you enquire about our luxury custom sauna builds across Ireland.'
+preloadImg: '/assets/images/privacy-policy-hero.jpg'
+permalink: '/privacy-policy/'
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<style>
+  :root {
+    --pd-primary: #1C2B2B;
+    --pd-accent: #5F9EA0;
+    --pd-accent-warm: #C68B4E;
+    --pd-light: #F7F5F1;
+    --pd-white: #ffffff;
+    --pd-slate: #3D4F4F;
+    --pd-mist: #E8EDEC;
+    --pd-font-display: 'Fraunces', serif;
+    --pd-font-body: 'DM Sans', sans-serif;
+  }
+
+  .atlantic-saunas-privacy-policy *,
+  .atlantic-saunas-privacy-policy *::before,
+  .atlantic-saunas-privacy-policy *::after {
+    box-sizing: border-box;
+  }
+
+  .atlantic-saunas-privacy-policy {
+    font-family: var(--pd-font-body);
+    color: var(--pd-primary);
+    background: var(--pd-light);
+    line-height: 1.7;
+  }
+
+  /* ── HERO ── */
+  .atlantic-saunas-privacy-policy .pp-hero {
+    background: linear-gradient(135deg, #1C2B2B 0%, #2E4444 55%, #3D5A5A 100%);
+    padding: 80px 24px 72px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .atlantic-saunas-privacy-policy .pp-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 60% 40%, rgba(95,158,160,0.18) 0%, transparent 70%),
+                radial-gradient(ellipse at 20% 80%, rgba(198,139,78,0.10) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .atlantic-saunas-privacy-policy .pp-hero-eyebrow {
+    display: inline-block;
+    font-family: var(--pd-font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--pd-accent);
+    margin-bottom: 18px;
+  }
+
+  .atlantic-saunas-privacy-policy .pp-hero h1 {
+    font-family: var(--pd-font-display);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    color: var(--pd-white);
+    margin: 0 0 16px;
+    line-height: 1.15;
+  }
+
+  .atlantic-saunas-privacy-policy .pp-hero-sub {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.72);
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  /* ── CONTENT WRAPPER ── */
+  .atlantic-saunas-privacy-policy .pp-content {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 64px 24px 80px;
+  }
+
+  .atlantic-saunas-privacy-policy .pp-content h2 {
+    font-family: var(--pd-font-display);
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: var(--pd-primary);
+    margin: 48px 0 14px;
+    padding-top: 8px;
+    border-top: 1px solid var(--pd-mist);
+  }
+
+  .atlantic-saunas-privacy-policy .pp-content h2:first-child {
+    margin-top: 0;
+    border-top: none;
+  }
+
+  .atlantic-saunas-privacy-policy .pp-content p {
+    margin: 0 0 18px;
+    color: var(--pd-slate);
+    font-size: 0.97rem;
+  }
+
+  .atlantic-saunas-privacy-policy .pp-content ul {
+    margin: 0 0 18px 0;
+    padding-left: 22px;
+  }
+
+  .atlantic-saunas-privacy-policy .pp-content ul li {
+    color: var(--pd-slate);
+    font-size: 0.97rem;
+    margin-bottom: 8px;
+  }
+
+  .atlantic-saunas-privacy-policy .pp-content a {
+    color: var(--pd-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .atlantic-saunas-privacy-policy .pp-content a:hover {
+    color: var(--pd-accent-warm);
+  }
+
+  .atlantic-saunas-privacy-policy .pp-updated {
+    display: inline-block;
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--pd-accent-warm);
+    font-weight: 600;
+    margin-bottom: 40px;
+  }
+
+  /* ── CTA BAND ── */
+  .atlantic-saunas-privacy-policy .pp-cta-band {
+    background: linear-gradient(135deg, #1C2B2B 0%, #2E4444 100%);
+    padding: 64px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .atlantic-saunas-privacy-policy .pp-cta-band::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 100%, rgba(95,158,160,0.15) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .atlantic-saunas-privacy-policy .pp-cta-band h2 {
+    font-family: var(--pd-font-display);
+    font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+    font-weight: 700;
+    color: var(--pd-white);
+    margin: 0 0 14px;
+  }
+
+  .atlantic-saunas-privacy-policy .pp-cta-band p {
+    color: rgba(255,255,255,0.72);
+    font-size: 1rem;
+    max-width: 480px;
+    margin: 0 auto 32px;
+  }
+
+  .atlantic-saunas-privacy-policy .btn-primary {
+    display: inline-block;
+    background: var(--pd-accent-warm);
+    color: var(--pd-white);
+    font-family: var(--pd-font-body);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 16px 36px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    z-index: 1;
+  }
+
+  .atlantic-saunas-privacy-policy .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(198,139,78,0.35);
+  }
+
+  .atlantic-saunas-privacy-policy .btn-primary:focus-visible {
+    outline: 3px solid var(--pd-accent);
+    outline-offset: 4px;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (min-width: 768px) {
+    .atlantic-saunas-privacy-policy .pp-hero {
+      padding: 100px 40px 90px;
+    }
+
+    .atlantic-saunas-privacy-policy .pp-content {
+      padding: 80px 40px 96px;
+    }
+
+    .atlantic-saunas-privacy-policy .pp-cta-band {
+      padding: 80px 40px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .atlantic-saunas-privacy-policy .pp-content {
+      padding: 96px 0 112px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .atlantic-saunas-privacy-policy .btn-primary {
+      transition: none;
+    }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Privacy Policy | Wild Heat Saunas",
+  "description": "Read the Wild Heat Saunas privacy policy. We explain how we collect, use and protect your personal data when you enquire about our luxury custom sauna builds across Ireland.",
+  "url": "https://www.atlanticsaunas.ie/privacy-policy/",
+  "publisher": {
+    "@type": "LocalBusiness",
+    "name": "Wild Heat Saunas",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Galway",
+      "addressCountry": "IE"
+    },
+    "telephone": "+353876712695",
+    "email": "test@test.com",
+    "url": "https://www.atlanticsaunas.ie/"
+  }
+}
+</script>
+
+<div class="atlantic-saunas-privacy-policy">
+
+  <!-- HERO -->
+  <section class="pp-hero" aria-labelledby="pp-h1">
+    <span class="pp-hero-eyebrow">Legal &amp; Data</span>
+    <h1 id="pp-h1">Privacy Policy</h1>
+    <p class="pp-hero-sub">How Wild Heat Saunas collects, uses and protects your personal information.</p>
+  </section>
+
+  <!-- CONTENT -->
+  <main class="pp-content" aria-label="Privacy policy content">
+
+    <span class="pp-updated">Last updated: June 2025</span>
+
+    <h2>Who We Are</h2>
+    <p>Wild Heat Saunas is a luxury custom sauna design and build company based in Galway, operating across Ireland. We take your privacy seriously.</p>
+    <p>If you have any questions about this policy, contact us at <a href="mailto:test@test.com">test@test.com</a> or call <a href="tel:+353876712695">+353 87 671 2695</a>.</p>
+
+    <h2>What Information We Collect</h2>
+    <p>We collect personal information only when you voluntarily provide it — for example, when you:</p>
+    <ul>
+      <li>Fill in a quote or contact form on this website</li>
+      <li>Click or interact with one of our Facebook or Instagram ads</li>
+      <li>Send us an email or call us directly</li>
+    </ul>
+    <p>The information we may collect includes your name, email address, phone number, and details about your sauna enquiry (e.g. location, project type).</p>
+
+    <h2>How We Use Your Information</h2>
+    <p>We use the information you provide solely to:</p>
+    <ul>
+      <li>Respond to your enquiry and provide a quote</li>
+      <li>Follow up on your project interest</li>
+      <li>Improve our services and communication</li>
+      <li>Comply with our legal obligations</li>
+    </ul>
+    <p>We do not sell, rent or share your personal data with third parties for their own marketing purposes.</p>
+
+    <h2>Facebook Ads &amp; Meta Pixel</h2>
+    <p>We may use the Meta (Facebook) Pixel on this website. This is a small piece of code that helps us measure the effectiveness of our advertising by understanding the actions people take on our website after clicking on one of our Facebook or Instagram ads.</p>
+    <p>The Meta Pixel may collect information such as your IP address, browser type, the pages you visit, and whether you completed a form. This data is processed by Meta Platforms Ireland Ltd under their own <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</p>
+    <p>You can opt out of Meta's data collection at any time via your <a href="https://www.facebook.com/settings/?tab=ads" target="_blank" rel="noopener noreferrer">Facebook Ad Settings</a> or through your browser's cookie controls.</p>
+
+    <h2>Cookies</h2>
+    <p>This website may use cookies — small text files stored on your device — to improve your browsing experience and support our advertising (including the Meta Pixel described above). You can control cookies through your browser settings. Continuing to use our site implies acceptance of essential cookies.</p>
+
+    <h2>Data Retention</h2>
+    <p>We retain your personal data only for as long as necessary to fulfil the purpose for which it was collected, or as required by law. Enquiry data is typically held for up to 24 months.</p>
+
+    <h2>Your Rights Under GDPR</h2>
+    <p>As a resident of Ireland or the EU, you have the right to:</p>
+    <ul>
+      <li>Access the personal data we hold about you</li>
+      <li>Request correction or deletion of your data</li>
+      <li>Object to or restrict our processing of your data</li>
+      <li>Withdraw consent at any time</li>
+      <li>Lodge a complaint with the Data Protection Commission (Ireland) at <a href="https://www.dataprotection.ie" target="_blank" rel="noopener noreferrer">dataprotection.ie</a></li>
+    </ul>
+    <p>To exercise any of these rights, email us at <a href="mailto:test@test.com">test@test.com</a>.</p>
+
+    <h2>Third-Party Links</h2>
+    <p>Our website may contain links to external sites (e.g. Meta, Google). We are not responsible for the privacy practices of those sites and encourage you to review their policies directly.</p>
+
+    <h2>Changes to This Policy</h2>
+    <p>We may update this privacy policy from time to time. The most current version will always be available on this page with the date of last update shown above.</p>
+
+    <h2>Contact Us</h2>
+    <p>Wild Heat Saunas, Galway, Ireland.<br>
+    Email: <a href="mailto:test@test.com">Click to email/a><br>
+    Phone: <a href="tel:+353876712695">+353 87 671 2695</a></p>
+
+  </main>
+
+  <!-- CTA BAND -->
+  <section class="pp-cta-band" aria-label="Contact call to action">
+    <h2>Ready to Talk Saunas?</h2>
+    <p>Privacy sorted. Now let's build you something extraordinary.</p>
+    <a href="/contact/" class="btn-primary">Get a Free Quote</a>
+  </section>
+
+</div>
+{% endblock %}

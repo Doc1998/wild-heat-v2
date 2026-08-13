@@ -1,0 +1,794 @@
+---
+title: 'About Wild Heat Saunas | Luxury Sauna Builders Ireland'
+description: 'About us — Wild Heat Saunas design and build luxury custom home saunas, plus quality pre-built barrel saunas, across Ireland. 5 years experience, 5-star reviews, and a craft-first approach.'
+preloadImg: '/assets/images/hero-2.jpg'
+permalink: '/about/'
+eleventyNavigation:
+  key: About
+  order: 300
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<style>
+  :root {
+    --pd-primary: #14110D;
+    --pd-accent: #D97620;
+    --pd-cedar: #A0622A;
+    --pd-warm-white: #F7F4EF;
+    --pd-slate: #3A342C;
+    --pd-mist: #F5EDE0;
+    --pd-shadow: 0 10px 40px rgba(28,31,26,0.07);
+    --pd-font-display: 'Fraunces', serif;
+    --pd-font-body: 'DM Sans', sans-serif;
+  }
+
+  .wild-heat-saunas-about *,
+  .wild-heat-saunas-about *::before,
+  .wild-heat-saunas-about *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .wild-heat-saunas-about {
+    font-family: var(--pd-font-body);
+    color: var(--pd-primary);
+    background: var(--pd-warm-white);
+    line-height: 1.7;
+  }
+
+  /* ── HERO ── */
+  .wild-heat-saunas-about .about-hero {
+    position: relative;
+    min-height: 72vh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    background-color: var(--pd-primary);
+  }
+
+  .wild-heat-saunas-about .about-hero__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.48;
+  }
+
+  .wild-heat-saunas-about .about-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(28,31,26,0.82) 0%,
+      rgba(28,31,26,0.18) 60%,
+      transparent 100%
+    );
+  }
+
+  .wild-heat-saunas-about .about-hero__content {
+    position: relative;
+    z-index: 2;
+    padding: 5rem 1.5rem 3.5rem;
+    max-width: 760px;
+  }
+
+  .wild-heat-saunas-about .eyebrow {
+    display: inline-block;
+    font-family: var(--pd-font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--pd-accent);
+    margin-bottom: 1rem;
+  }
+
+  .wild-heat-saunas-about .about-hero__content h1 {
+    font-family: var(--pd-font-display);
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-weight: 700;
+    color: var(--pd-warm-white);
+    line-height: 1.15;
+    margin-bottom: 1.1rem;
+  }
+
+  .wild-heat-saunas-about .about-hero__content p {
+    font-size: 1.05rem;
+    color: rgba(247,244,239,0.82);
+    max-width: 520px;
+    margin-bottom: 2rem;
+  }
+
+  .wild-heat-saunas-about .btn-primary {
+    display: inline-block;
+    font-family: var(--pd-font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--pd-warm-white);
+    background: var(--pd-cedar);
+    padding: 0.85rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .wild-heat-saunas-about .btn-primary:hover,
+  .wild-heat-saunas-about .btn-primary:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(160,98,42,0.32);
+    outline: none;
+  }
+
+  .wild-heat-saunas-about .btn-primary:focus-visible {
+    outline: 2px solid var(--pd-accent);
+    outline-offset: 3px;
+  }
+
+  /* ── STORY SECTION ── */
+  .wild-heat-saunas-about .about-story {
+    background: var(--pd-warm-white);
+    padding: 6rem 1.5rem;
+  }
+
+  .wild-heat-saunas-about .about-story__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    align-items: center;
+  }
+
+  .wild-heat-saunas-about .about-story__img-wrap {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    background: linear-gradient(
+      135deg,
+      #c8976a 0%,
+      #8b5e3c 40%,
+      #3D4440 100%
+    );
+    box-shadow: var(--pd-shadow);
+  }
+
+  .wild-heat-saunas-about .about-story__img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+    display: block;
+  }
+
+  .wild-heat-saunas-about .about-story__accent-bar {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    background: var(--pd-cedar);
+    color: var(--pd-warm-white);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.45rem 1rem;
+    border-radius: 6px;
+  }
+
+  .wild-heat-saunas-about .about-story__copy .eyebrow {
+    margin-bottom: 0.8rem;
+  }
+
+  .wild-heat-saunas-about .about-story__copy h2 {
+    font-family: var(--pd-font-display);
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-weight: 700;
+    color: var(--pd-primary);
+    line-height: 1.2;
+    margin-bottom: 1.4rem;
+  }
+
+  .wild-heat-saunas-about .about-story__copy p {
+    font-size: 1rem;
+    color: var(--pd-slate);
+    margin-bottom: 1rem;
+    max-width: 560px;
+  }
+
+  .wild-heat-saunas-about .about-story__copy p:last-child {
+    margin-bottom: 0;
+  }
+
+  .wild-heat-saunas-about .about-story__stat-row {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .wild-heat-saunas-about .stat-item__num {
+    font-family: var(--pd-font-display);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--pd-cedar);
+    line-height: 1;
+  }
+
+  .wild-heat-saunas-about .stat-item__label {
+    font-size: 0.78rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--pd-slate);
+    margin-top: 0.25rem;
+  }
+
+  /* ── GUARANTEES ── */
+  .wild-heat-saunas-about .about-guarantees {
+    background: var(--pd-primary);
+    padding: 6rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .wild-heat-saunas-about .about-guarantees::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse 80% 60% at 70% 40%,
+      rgba(217, 118, 32, 0.12) 0%,
+      transparent 70%
+    );
+    pointer-events: none;
+  }
+
+  .wild-heat-saunas-about .about-guarantees__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .wild-heat-saunas-about .about-guarantees__header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .wild-heat-saunas-about .about-guarantees__header .eyebrow {
+    color: var(--pd-accent);
+  }
+
+  .wild-heat-saunas-about .about-guarantees__header h2 {
+    font-family: var(--pd-font-display);
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    font-weight: 700;
+    color: var(--pd-warm-white);
+    line-height: 1.2;
+    margin-top: 0.5rem;
+  }
+
+  .wild-heat-saunas-about .guarantees-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .wild-heat-saunas-about .guarantee-card {
+    background: rgba(247,244,239,0.06);
+    border: 1px solid rgba(247,244,239,0.1);
+    border-radius: 14px;
+    padding: 2rem 1.8rem;
+    transition: transform 0.2s ease;
+  }
+
+  .wild-heat-saunas-about .guarantee-card:hover {
+    transform: translateY(-3px);
+  }
+
+  .wild-heat-saunas-about .guarantee-card__icon {
+    font-size: 1.6rem;
+    margin-bottom: 0.9rem;
+    display: block;
+  }
+
+  .wild-heat-saunas-about .guarantee-card h3 {
+    font-family: var(--pd-font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--pd-warm-white);
+    margin-bottom: 0.6rem;
+  }
+
+  .wild-heat-saunas-about .guarantee-card p {
+    font-size: 0.9rem;
+    color: rgba(247,244,239,0.68);
+    line-height: 1.6;
+  }
+
+  .wild-heat-saunas-about .guarantee-card .verify-note {
+    font-size: 0.75rem;
+    color: rgba(247,244,239,0.38);
+    margin-top: 0.5rem;
+  }
+
+  /* ── REVIEWS STRIP ── */
+  .wild-heat-saunas-about .about-reviews {
+    background: var(--pd-warm-white);
+    padding: 5rem 1.5rem;
+    border-top: 1px solid var(--pd-mist);
+  }
+
+  .wild-heat-saunas-about .about-reviews__inner {
+    max-width: 820px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .wild-heat-saunas-about .review-stars {
+    color: #FBBF24;
+    font-size: 1.35rem;
+    letter-spacing: 0.04em;
+    margin-bottom: 1rem;
+  }
+
+  .wild-heat-saunas-about .review-quote {
+    font-family: var(--pd-font-display);
+    font-size: clamp(1.15rem, 2.5vw, 1.6rem);
+    color: var(--pd-primary);
+    line-height: 1.45;
+    font-style: italic;
+    margin-bottom: 1.2rem;
+  }
+
+  .wild-heat-saunas-about .review-attribution {
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--pd-slate);
+  }
+
+  .wild-heat-saunas-about .review-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.8rem;
+    background: var(--pd-warm-white);
+    border: 1px solid var(--pd-mist);
+    border-radius: 100px;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--pd-slate);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .wild-heat-saunas-about .review-badge strong {
+    color: var(--pd-cedar);
+  }
+
+  /* ── AREAS ── */
+  .wild-heat-saunas-about .about-areas {
+    background: #F5EDE0;
+    padding: 6rem 1.5rem;
+  }
+
+  .wild-heat-saunas-about .about-areas__inner {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .wild-heat-saunas-about .about-areas__header {
+    margin-bottom: 2.5rem;
+  }
+
+  .wild-heat-saunas-about .about-areas__header h2 {
+    font-family: var(--pd-font-display);
+    font-size: clamp(1.7rem, 3vw, 2.2rem);
+    font-weight: 700;
+    color: var(--pd-primary);
+    margin-top: 0.5rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .wild-heat-saunas-about .about-areas__header p {
+    font-size: 0.97rem;
+    color: var(--pd-slate);
+    max-width: 600px;
+    line-height: 1.6;
+  }
+
+  .wild-heat-saunas-about .areas-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 2rem;
+  }
+
+  .wild-heat-saunas-about .area-chip {
+    background: var(--pd-warm-white);
+    border: 1px solid var(--pd-mist);
+    border-radius: 100px;
+    padding: 0.45rem 1.05rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--pd-slate);
+    letter-spacing: 0.02em;
+    transition: background 0.18s, color 0.18s;
+  }
+
+  .wild-heat-saunas-about .area-chip:hover {
+    background: var(--pd-accent);
+    color: var(--pd-warm-white);
+    border-color: var(--pd-accent);
+  }
+
+  /* ── CTA BAND ── */
+  .wild-heat-saunas-about .about-cta {
+    background: linear-gradient(
+      135deg,
+      #14110D 0%,
+      #241C14 60%,
+      #14110D 100%
+    );
+    padding: 6rem 1.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .wild-heat-saunas-about .about-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse 70% 50% at 50% 60%,
+      rgba(217, 118, 32, 0.15) 0%,
+      transparent 70%
+    );
+    pointer-events: none;
+  }
+
+  .wild-heat-saunas-about .about-cta__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .wild-heat-saunas-about .about-cta h2 {
+    font-family: var(--pd-font-display);
+    font-size: clamp(1.9rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: var(--pd-warm-white);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .wild-heat-saunas-about .about-cta p {
+    font-size: 1rem;
+    color: rgba(247,244,239,0.72);
+    margin-bottom: 2.2rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .wild-heat-saunas-about .cta-btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .wild-heat-saunas-about .btn-outline {
+    display: inline-block;
+    font-family: var(--pd-font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--pd-warm-white);
+    border: 1.5px solid rgba(247,244,239,0.4);
+    background: transparent;
+    padding: 0.85rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .wild-heat-saunas-about .btn-outline:hover,
+  .wild-heat-saunas-about .btn-outline:focus-visible {
+    border-color: var(--pd-accent);
+    background: rgba(217, 118, 32, 0.12);
+    outline: none;
+  }
+
+  .wild-heat-saunas-about .btn-outline:focus-visible {
+    outline: 2px solid var(--pd-accent);
+    outline-offset: 3px;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (min-width: 768px) {
+    .wild-heat-saunas-about .about-hero__content {
+      padding: 6rem 3rem 4.5rem;
+    }
+
+    .wild-heat-saunas-about .guarantees-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .wild-heat-saunas-about .about-story {
+      padding: 8rem 3rem;
+    }
+
+    .wild-heat-saunas-about .about-guarantees {
+      padding: 8rem 3rem;
+    }
+
+    .wild-heat-saunas-about .about-areas {
+      padding: 8rem 3rem;
+    }
+
+    .wild-heat-saunas-about .about-cta {
+      padding: 8rem 3rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .wild-heat-saunas-about .about-story__inner {
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+    }
+
+    .wild-heat-saunas-about .guarantees-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .wild-heat-saunas-about .about-hero__content {
+      padding: 8rem 5rem 5rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wild-heat-saunas-about .btn-primary,
+    .wild-heat-saunas-about .guarantee-card,
+    .wild-heat-saunas-about .btn-outline {
+      transition: none;
+    }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "https://wildheatsaunas.ie/about/#webpage",
+      "url": "https://wildheatsaunas.ie/about/",
+      "name": "About Wild Heat Saunas | Luxury Sauna Builders Ireland",
+      "description": "About us — Wild Heat Saunas design and build luxury custom home saunas, plus quality pre-built barrel saunas, across Ireland. 5 years experience, 5-star reviews, and a craft-first approach.",
+      "inLanguage": "en-IE",
+      "isPartOf": { "@id": "https://wildheatsaunas.ie/#website" }
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://wildheatsaunas.ie/#business",
+      "name": "Wild Heat Saunas",
+      "description": "Wild Heat Saunas design and build luxury custom home saunas, plus quality pre-built barrel saunas, across Ireland.",
+      "url": "https://wildheatsaunas.ie",
+      "telephone": "+353876712695",
+      "email": "test@test.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Galway",
+        "addressCountry": "IE"
+      },
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Galway" },
+        { "@type": "AdministrativeArea", "name": "Dublin" },
+        { "@type": "AdministrativeArea", "name": "Cork" },
+        { "@type": "AdministrativeArea", "name": "Limerick" },
+        { "@type": "AdministrativeArea", "name": "Kilkenny" },
+        { "@type": "AdministrativeArea", "name": "Wicklow" },
+        { "@type": "AdministrativeArea", "name": "Wexford" },
+        { "@type": "AdministrativeArea", "name": "Mayo" },
+        { "@type": "AdministrativeArea", "name": "Clare" },
+        { "@type": "AdministrativeArea", "name": "Sligo" },
+        { "@type": "AdministrativeArea", "name": "Ireland" }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "10",
+        "bestRating": "5"
+      },
+      "priceRange": "€€€",
+      "sameAs": []
+    }
+  ]
+}
+</script>
+
+<div class="wild-heat-saunas-about">
+
+  <!-- ── HERO ── -->
+  <section class="about-hero" aria-labelledby="about-hero-h1">
+    <img
+      src="/assets/images/hero-2.jpg"
+      alt="Wild Heat Saunas team building a luxury cedar sauna in Galway"
+      width="1600"
+      height="900"
+      class="about-hero__img"
+      fetchpriority="high"
+    >
+    <div class="about-hero__overlay" aria-hidden="true"></div>
+    <div class="about-hero__content">
+      <span class="eyebrow">About Us</span>
+      <h1 id="about-hero-h1">Why Galway Trusts Wild&nbsp;Heat&nbsp;Saunas</h1>
+      <p>Five years of craft-led sauna builds. Warm cedar, honest materials, and saunas that last a lifetime — bespoke or pre-built, designed around you.</p>
+      <a href="/contact/" class="btn-primary">Get a Free Quote</a>
+    </div>
+  </section>
+
+  <!-- ── STORY ── -->
+  <section class="about-story" aria-labelledby="story-heading">
+    <div class="about-story__inner">
+
+      <div class="about-story__img-wrap">
+        <img
+          src="/assets/images/sauna-h1.jpeg"
+          alt="Wild Heat Saunas craftsmen working with cedar timber in their Galway workshop"
+          width="800"
+          height="600"
+        >
+        <span class="about-story__accent-bar">Est. Galway, Ireland</span>
+      </div>
+
+      <div class="about-story__copy">
+        <span class="eyebrow">Our Story</span>
+        <h2 id="story-heading">Built on the Atlantic Edge</h2>
+        <p>Wild Heat Saunas was founded right here on Ireland's west coast — a place where the cold sea and the warm sauna feel like two halves of the same ritual. We've spent five years perfecting custom sauna builds that belong in the landscape: cedar and oak, slate and steam, designed to last. We also offer a range of pre-built barrel saunas for those who want that same wild heat without the wait.</p>
+        <p>Every build starts with a conversation. We listen, we design, we craft — and we don't hand over the keys until it's exactly right. <!-- VERIFY: Confirm founding story details and workshop location with the client --></p>
+        <p>From compact home saunas to full wellness retreats, we work directly with homeowners across Ireland. No middlemen. No shortcuts.</p>
+
+        <div class="about-story__stat-row" aria-label="Key facts about Wild Heat Saunas">
+          <div class="stat-item">
+            <div class="stat-item__num">5</div>
+            <div class="stat-item__label">Years Building</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-item__num">5.0</div>
+            <div class="stat-item__label">Google Rating</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-item__num">100%</div>
+            <div class="stat-item__label">Custom Builds</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── GUARANTEES ── -->
+  <section class="about-guarantees" aria-labelledby="guarantees-heading">
+    <div class="about-guarantees__inner">
+      <div class="about-guarantees__header">
+        <span class="eyebrow">Why Choose Us</span>
+        <h2 id="guarantees-heading">What You Can Count On</h2>
+      </div>
+
+      <div class="guarantees-grid">
+
+        <article class="guarantee-card">
+          <span class="guarantee-card__icon" aria-hidden="true">🌲</span>
+          <h3>Premium Timber</h3>
+          <p>We use sustainably sourced cedar, pinewood and heat-treated thermowood — selected for longevity, aroma, and beauty in Ireland's damp climate.</p>
+          <!-- VERIFY: Confirm timber suppliers and sustainability certifications with client -->
+        </article>
+
+        <article class="guarantee-card">
+          <span class="guarantee-card__icon" aria-hidden="true">📐</span>
+          <h3>Bespoke or Pre-Built</h3>
+          <p>Choose a fully bespoke sauna designed from scratch to fit your space, or a quality pre-built barrel sauna ready to order.</p>
+        </article>
+
+        <article class="guarantee-card">
+          <span class="guarantee-card__icon" aria-hidden="true">🛠️</span>
+          <h3>End-to-End Service</h3>
+          <p>From initial design through to final installation, we manage the entire process. One point of contact, zero stress.</p>
+        </article>
+
+        <article class="guarantee-card">
+          <span class="guarantee-card__icon" aria-hidden="true">✅</span>
+          <h3>Workmanship Guarantee</h3>
+          <p>We stand behind every build with a full workmanship guarantee. <!-- VERIFY: Confirm guarantee period (e.g. 2 years, 5 years) with client --></p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── REVIEW ── -->
+  <section class="about-reviews" aria-labelledby="reviews-heading">
+    <div class="about-reviews__inner">
+      <div class="review-stars" aria-label="Five star review">★★★★★</div>
+      <p id="reviews-heading" class="review-quote">"We are very happy with our Sauna. Malcolm and the team were a pleasure to work with."</p>
+      <p class="review-attribution">— Laura, Galway</p>
+      <div class="review-badge" aria-label="Google rating: 5.0 from 10 reviews">
+        <span>Google Rating</span>
+        <strong>5.0 ★</strong>
+        <span>· 10 Reviews</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA BAND ── -->
+  <section class="about-cta" aria-labelledby="cta-heading">
+    <div class="about-cta__inner">
+      <span class="eyebrow">Ready to Begin?</span>
+      <h2 id="cta-heading">Let's Build Your Sauna</h2>
+      <p>Tell us about your space and we'll come back with ideas, a design, and a fast free quote — no pressure, no obligation.</p>
+      <div class="cta-btn-group">
+        <a href="/contact/" class="btn-primary">Get a Free Quote</a>
+        <a href="/our-process/" class="btn-outline">See Our Process</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── AREAS ── -->
+  <section class="about-areas" aria-labelledby="areas-heading">
+    <div class="about-areas__inner">
+      <div class="about-areas__header">
+        <span class="eyebrow">Where We Build</span>
+        <h2 id="areas-heading">Serving All of Ireland</h2>
+        <p>Based in Galway, we travel across Connacht, Leinster, Munster and beyond. Wherever you are in Ireland, we'll come to you, survey your space, and deliver a sauna built to last.</p>
+      </div>
+
+      <div class="areas-chips" aria-label="Towns and counties we serve">
+        <span class="area-chip">Galway</span>
+        <span class="area-chip">Dublin</span>
+        <span class="area-chip">Cork</span>
+        <span class="area-chip">Limerick</span>
+        <span class="area-chip">Kilkenny</span>
+        <span class="area-chip">Wicklow</span>
+        <span class="area-chip">Wexford</span>
+        <span class="area-chip">Waterford</span>
+        <span class="area-chip">Mayo</span>
+        <span class="area-chip">Sligo</span>
+        <span class="area-chip">Clare</span>
+        <span class="area-chip">Roscommon</span>
+        <span class="area-chip">Tipperary</span>
+        <span class="area-chip">Kerry</span>
+        <span class="area-chip">Kildare</span>
+        <span class="area-chip">Meath</span>
+        <span class="area-chip">Louth</span>
+        <span class="area-chip">Westmeath</span>
+        <span class="area-chip">Laoighis</span>
+        <span class="area-chip">Offaly</span>
+        <span class="area-chip">Carlow</span>
+        <span class="area-chip">Monaghan</span>
+        <span class="area-chip">Cavan</span>
+        <span class="area-chip">Donegal</span>
+        <span class="area-chip">Leitrim</span>
+      </div>
+    </div>
+  </section>
+
+
+
+</div>
+{% endblock %}

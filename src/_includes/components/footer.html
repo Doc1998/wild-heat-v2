@@ -1,0 +1,472 @@
+<style>
+  :root {
+    --pd-primary: #14110D;
+    --pd-accent: #D97620;
+    --pd-light: #F5EDE0;
+    --pd-white: #ffffff;
+    --pd-font-display: 'Fraunces', sans-serif;
+    --pd-font-body: 'DM Sans', sans-serif;
+  }
+
+  .pd-footer {
+    background: linear-gradient(170deg, #0F0C09 0%, #14110D 55%, #100D0A 100%);
+    color: rgba(255,255,255,0.72);
+    font-family: var(--pd-font-body);
+    font-size: 0.875rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pd-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent 0%, rgba(217, 118, 32, 0.5) 30%, var(--pd-accent) 55%, rgba(217, 118, 32, 0.5) 80%, transparent 100%);
+  }
+
+  .pd-footer::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(ellipse at center, rgba(217, 118, 32, 0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .pd-footer__wave {
+    display: block;
+    width: 100%;
+    line-height: 0;
+    background: var(--pd-light);
+    margin-bottom: 0;
+  }
+
+  .pd-footer__wave svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .pd-footer__main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 3rem;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1.3fr;
+    gap: 3rem 2.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pd-footer__col-title {
+    font-family: var(--pd-font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--pd-white);
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.01em;
+    position: relative;
+    padding-bottom: 0.75rem;
+  }
+
+  .pd-footer__col-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 28px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(217, 118, 32, 0.8), transparent);
+    border-radius: 2px;
+  }
+
+  .pd-footer__about-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 1.1rem;
+    text-decoration: none;
+  }
+
+  .pd-footer__about-logo img {
+    height: 115px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+  }
+
+  .pd-footer__about-logo-name {
+    font-family: var(--pd-font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--pd-white);
+    letter-spacing: -0.01em;
+  }
+
+  .pd-footer__about-text {
+    color: rgba(255,255,255,0.6);
+    line-height: 1.75;
+    font-size: 0.855rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .pd-footer__tagline {
+    display: inline-block;
+    font-family: var(--pd-font-display);
+    font-style: italic;
+    font-size: 0.82rem;
+    color: rgba(217, 118, 32, 0.85);
+    letter-spacing: 0.01em;
+    line-height: 1.5;
+  }
+
+  .pd-footer__links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .pd-footer__links li a {
+    color: rgba(255,255,255,0.62);
+    text-decoration: none;
+    font-size: 0.865rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    transition: color 0.2s ease, gap 0.2s ease;
+    line-height: 1.4;
+  }
+
+  .pd-footer__links li a::before {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgba(217, 118, 32, 0.5);
+    flex-shrink: 0;
+    transition: background 0.2s ease;
+  }
+
+  .pd-footer__links li a:hover {
+    color: rgba(232, 154, 82, 0.95);
+    gap: 0.6rem;
+  }
+
+  .pd-footer__links li a:hover::before {
+    background: rgba(217, 118, 32, 0.9);
+  }
+
+  .pd-footer__services {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .pd-footer__services li {
+    color: rgba(255,255,255,0.62);
+    font-size: 0.865rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    line-height: 1.45;
+  }
+
+  .pd-footer__services li svg {
+    flex-shrink: 0;
+    margin-top: 3px;
+    color: rgba(217, 118, 32, 0.75);
+  }
+
+  .pd-footer__contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    margin-bottom: 0.9rem;
+    color: rgba(255,255,255,0.62);
+    font-size: 0.865rem;
+    line-height: 1.5;
+  }
+
+  .pd-footer__contact-item svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: rgba(217, 118, 32, 0.8);
+  }
+
+  .pd-footer__contact-item a {
+    color: rgba(255,255,255,0.78);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-weight: 500;
+  }
+
+  .pd-footer__contact-item a:hover { color: rgba(232, 154, 82, 0.95); }
+
+  .pd-footer__hours {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.45);
+    margin-top: 0.25rem;
+    font-style: italic;
+  }
+
+  .pd-footer__bottom {
+    border-top: 1px solid rgba(255,255,255,0.07);
+    position: relative;
+    z-index: 1;
+  }
+
+  .pd-footer__bottom-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .pd-footer__socials {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .pd-footer__socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .pd-footer__socials a:hover {
+    background: rgba(217, 118, 32, 0.15);
+    border-color: rgba(217, 118, 32, 0.3);
+    color: rgba(232, 154, 82, 0.95);
+  }
+
+  .pd-footer__legal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    text-align: center;
+  }
+
+  .pd-footer__copyright {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.38);
+    letter-spacing: 0.01em;
+  }
+
+  .pd-footer__copyright a {
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .pd-footer__copyright a:hover { color: rgba(255,255,255,0.65); }
+
+  .pd-footer__credit {
+    font-size: 0.73rem;
+    color: rgba(255,255,255,0.22);
+    letter-spacing: 0.015em;
+  }
+
+  .pd-footer__credit a {
+    color: rgba(255,255,255,0.3);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .pd-footer__credit a:hover { color: rgba(217, 118, 32, 0.7); }
+
+  @media (max-width: 960px) {
+    .pd-footer__main {
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem 2rem;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .pd-footer__main {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 3rem 1.25rem 2rem;
+    }
+    .pd-footer__bottom-inner { padding: 1.25rem; }
+  }
+</style>
+
+<div class="pd-footer__wave" aria-hidden="true">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 C240,60 480,0 720,28 C960,56 1200,8 1440,30 L1440,60 L0,60 Z" fill="#0F0C09"/>
+  </svg>
+</div>
+
+<footer class="pd-footer" role="contentinfo">
+
+  <div class="pd-footer__main">
+
+    <div class="pd-footer__col">
+      <a href="/" class="pd-footer__about-logo" aria-label="Wild Heat Saunas – Home">
+        <img src="/assets/images/logo-light.png" alt="Wild Heat Saunas logo" onerror="this.style.display='none'">
+      </a>
+      <p class="pd-footer__about-text">
+        We design and build bespoke luxury saunas for homes across Ireland. Rooted in the wild Atlantic west, every sauna we craft is a meeting of warm cedar craftsmanship, honest materials, and considered Nordic design — built to last a lifetime.
+      </p>
+      <span class="pd-footer__tagline">Handcrafted saunas. Wild Atlantic soul.</span>
+    </div>
+
+    <div class="pd-footer__col">
+      <h3 class="pd-footer__col-title">Quick Links</h3>
+      <ul class="pd-footer__links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/our-process/">Our Process</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/area/">Location</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/privacy-policy/">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <div class="pd-footer__col">
+      <h3 class="pd-footer__col-title">Our Services</h3>
+      <ul class="pd-footer__services">
+        <li>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Bespoke Sauna Design
+        </li>
+        <li>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Custom Sauna Build
+        </li>
+        <li>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Full Installation
+        </li>
+        <li>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Indoor Saunas
+        </li>
+        <li>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Outdoor Garden Saunas
+        </li>
+        <li>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Barrel &amp; Pod Saunas
+        </li>
+        <li>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Sauna Consultation
+        </li>
+      </ul>
+    </div>
+
+    <div class="pd-footer__col">
+      <h3 class="pd-footer__col-title">Get In Touch</h3>
+
+      <div class="pd-footer__contact-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.58.57 1 1 0 011 1V21a1 1 0 01-1 1C9.61 22 2 14.39 2 5a1 1 0 011-1h3.5a1 1 0 011 1 11.47 11.47 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z" fill="currentColor"/>
+        </svg>
+        <div>
+          <a href="tel:+353876712695">+353 87 671 2695</a>
+        </div>
+      </div>
+
+      <div class="pd-footer__contact-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+        <div>
+          <a href="mailto:test@test.com">test@test.com</a>
+        </div>
+      </div>
+
+      <div class="pd-footer__contact-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+        <div>
+          Galway, Ireland
+        </div>
+      </div>
+
+      <div class="pd-footer__contact-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
+        </svg>
+        <div>
+          <!-- VERIFY hours -->
+          Mon – Fri: 8:00am – 6:00pm
+          <div class="pd-footer__hours">Sat: 9:00am – 3:00pm · Sun: Closed</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="pd-footer__bottom">
+    <div class="pd-footer__bottom-inner">
+
+      <nav class="pd-footer__socials" aria-label="Social media">
+        <a href="#" aria-label="Wild Heat Saunas on Facebook" rel="noopener noreferrer" target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Wild Heat Saunas on Instagram" rel="noopener noreferrer" target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Wild Heat Saunas on YouTube" rel="noopener noreferrer" target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29.12 29.12 0 001 12a29.12 29.12 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29.12 29.12 0 0023 12a29.12 29.12 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/>
+          </svg>
+        </a>
+      </nav>
+
+      <div class="pd-footer__legal">
+        <p class="pd-footer__copyright">
+          &copy; <span id="pd-footer-year"></span> Wild Heat Saunas. All rights reserved.
+          &nbsp;&middot;&nbsp;
+          <a href="/privacy-policy/">Privacy Policy</a>
+        </p>
+        <p class="pd-footer__credit">Website by <a href="https://acutis.ie" rel="noopener noreferrer" target="_blank">Acutis</a></p>
+      </div>
+
+    </div>
+  </div>
+
+</footer>
+
+<script>
+  (function () {
+    var el = document.getElementById('pd-footer-year');
+    if (el) el.textContent = new Date().getFullYear();
+  })();
+</script>

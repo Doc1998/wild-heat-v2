@@ -1,0 +1,2260 @@
+---
+title: 'Home Saunas Galway | Wild Heat Saunas'
+description: 'Wild Heat Saunas designs and builds luxury custom home saunas, plus quality pre-built barrel saunas, across Galway and all of Ireland. Fast free quotes, 5-star rated, fully insured. Call today.'
+preloadImg: '/assets/images/home-hero.jpg'
+permalink: '/'
+eleventyNavigation:
+  key: Home
+  order: 100
+---
+
+{% extends "layouts/home-base.html" %}
+
+{% block head %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600;700&display=swap">
+{% endblock %}
+
+{% block body %}
+<style>
+  :root {
+    --pd-primary: #14110D;
+    --pd-cedar: #A0622A;
+    --pd-cedar-light: #C8864A;
+    --pd-teal: #D97620;
+    --pd-teal-light: #E89A52;
+    --pd-teal-muted: #F7EAD9;
+    --pd-warm-white: #FAF8F5;
+    --pd-off-white: #F2EDE6;
+    --pd-slate: #3A342C;
+    --pd-slate-mid: #6B6156;
+    --pd-white: #ffffff;
+    --pd-gold: #FBBF24;
+    --pd-font-display: 'Fraunces', Georgia, serif;
+    --pd-font-body: 'DM Sans', system-ui, sans-serif;
+    --pd-radius-card: 14px;
+    --pd-radius-btn: 8px;
+    --pd-shadow: 0 10px 40px rgba(28, 31, 38, 0.08);
+    --pd-shadow-warm: 0 8px 32px rgba(160, 98, 42, 0.12);
+  }
+
+  .wild-heat-saunas-home *,
+  .wild-heat-saunas-home *::before,
+  .wild-heat-saunas-home *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .wild-heat-saunas-home {
+    font-family: var(--pd-font-body);
+    color: var(--pd-primary);
+    background: var(--pd-warm-white);
+    line-height: 1.7;
+  }
+
+  /* ── TYPOGRAPHY ── */
+  .wild-heat-saunas-home h1,
+  .wild-heat-saunas-home h2,
+  .wild-heat-saunas-home h3,
+  .wild-heat-saunas-home h4 {
+    font-family: var(--pd-font-display);
+    line-height: 1.15;
+    color: var(--pd-primary);
+  }
+
+  .wild-heat-saunas-home .eyebrow {
+    display: inline-block;
+    font-family: var(--pd-font-body);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--pd-teal);
+    margin-bottom: 0.9rem;
+  }
+
+  .wild-heat-saunas-home .eyebrow--cedar {
+    color: var(--pd-cedar);
+  }
+
+  .wild-heat-saunas-home .eyebrow--white {
+    color: var(--pd-teal-light);
+  }
+
+  /* ── BUTTONS ── */
+  .wild-heat-saunas-home .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--pd-font-body);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.85rem 1.8rem;
+    border-radius: var(--pd-radius-btn);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  }
+
+  .wild-heat-saunas-home .btn:focus-visible {
+    outline: 3px solid var(--pd-teal);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wild-heat-saunas-home .btn { transition: none; }
+  }
+
+  .wild-heat-saunas-home .btn-primary {
+    background: var(--pd-cedar);
+    color: var(--pd-white);
+    border-color: var(--pd-cedar);
+    box-shadow: 0 4px 18px rgba(160, 98, 42, 0.3);
+  }
+
+  .wild-heat-saunas-home .btn-primary:hover {
+    background: var(--pd-cedar-light);
+    border-color: var(--pd-cedar-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(160, 98, 42, 0.35);
+  }
+
+  .wild-heat-saunas-home .btn-outline-white {
+    background: transparent;
+    color: var(--pd-white);
+    border-color: rgba(255,255,255,0.6);
+  }
+
+  .wild-heat-saunas-home .btn-outline-white:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: var(--pd-white);
+    transform: translateY(-2px);
+  }
+
+  .wild-heat-saunas-home .btn-outline-teal {
+    background: transparent;
+    color: var(--pd-teal);
+    border-color: var(--pd-teal);
+  }
+
+  .wild-heat-saunas-home .btn-outline-teal:hover {
+    background: var(--pd-teal);
+    color: var(--pd-white);
+    transform: translateY(-2px);
+  }
+
+  /* ── HERO ── */
+  .wild-heat-saunas-home .home-hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: var(--pd-primary);
+  }
+
+  .wild-heat-saunas-home .home-hero__bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/assets/images/barrel-sauna8.jpeg');
+    background-size: cover;
+    background-position: center 30%;
+    z-index: 0;
+  }
+
+  .wild-heat-saunas-home .home-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      120deg,
+      rgba(28, 31, 38, 0.82) 0%,
+      rgba(28, 31, 38, 0.55) 55%,
+      rgba(217, 118, 32, 0.18) 100%
+    );
+    z-index: 1;
+  }
+
+  .wild-heat-saunas-home .home-hero__steam {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 80% 20%, rgba(217, 118, 32, 0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 20% 80%, rgba(160,98,42,0.06) 0%, transparent 50%);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .wild-heat-saunas-home .home-hero__content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 7rem 1.5rem 5rem;
+  }
+
+  .wild-heat-saunas-home .home-hero__inner {
+    max-width: 620px;
+  }
+
+  .wild-heat-saunas-home .home-hero__h1 {
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    font-weight: 700;
+    color: var(--pd-white);
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.01em;
+  }
+
+  .wild-heat-saunas-home .home-hero__h1 em {
+    font-style: normal;
+    color: var(--pd-teal-light);
+  }
+
+  .wild-heat-saunas-home .home-hero__sub {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.82);
+    margin-bottom: 1.1rem;
+    max-width: 480px;
+  }
+
+  .wild-heat-saunas-home .home-hero__price {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: var(--pd-teal-light);
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.16);
+    border-radius: 40px;
+    padding: 0.5rem 1.1rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .wild-heat-saunas-home .home-hero__price strong {
+    color: var(--pd-white);
+  }
+
+  .wild-heat-saunas-home .home-hero__trust {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .wild-heat-saunas-home .home-hero__trust li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.88);
+    font-weight: 500;
+  }
+
+  .wild-heat-saunas-home .home-hero__trust li svg {
+    flex-shrink: 0;
+    color: var(--pd-teal-light);
+  }
+
+  .wild-heat-saunas-home .home-hero__ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  /* ── WAVE DIVIDER ── */
+  .wild-heat-saunas-home .wave-divider {
+    display: block;
+    width: 100%;
+    line-height: 0;
+    overflow: hidden;
+  }
+
+  .wild-heat-saunas-home .wave-divider svg {
+    display: block;
+    width: 100%;
+  }
+
+  /* ── INTRO SPLIT ── */
+  .wild-heat-saunas-home .home-intro {
+    background: var(--pd-warm-white);
+    padding: 5rem 1.5rem 4rem;
+  }
+
+  .wild-heat-saunas-home .home-intro__container {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .wild-heat-saunas-home .home-intro__text h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    margin-bottom: 1.4rem;
+    color: var(--pd-primary);
+  }
+
+  .wild-heat-saunas-home .home-intro__text p {
+    color: var(--pd-slate);
+    margin-bottom: 1.2rem;
+    font-size: 1.02rem;
+    max-width: 560px;
+  }
+
+  .wild-heat-saunas-home .home-intro__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2.2rem;
+  }
+
+  .wild-heat-saunas-home .badge {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    background: var(--pd-white);
+    border: 1px solid rgba(217, 118, 32, 0.2);
+    border-radius: 40px;
+    padding: 0.55rem 1.1rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--pd-slate);
+    box-shadow: var(--pd-shadow);
+  }
+
+  .wild-heat-saunas-home .badge .stars {
+    color: var(--pd-gold);
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+  }
+
+  .wild-heat-saunas-home .badge svg {
+    color: var(--pd-teal);
+    flex-shrink: 0;
+  }
+
+  .wild-heat-saunas-home .home-intro__image {
+    position: relative;
+    border-radius: var(--pd-radius-card);
+    overflow: hidden;
+    box-shadow: var(--pd-shadow-warm);
+  }
+
+  .wild-heat-saunas-home .home-intro__image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--pd-radius-card);
+  }
+
+  .wild-heat-saunas-home .home-intro__image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, rgba(160,98,42,0.05) 0%, transparent 60%);
+    border-radius: var(--pd-radius-card);
+    pointer-events: none;
+  }
+
+  /* ── SECTION SHARED ── */
+  .wild-heat-saunas-home .section {
+    padding: 5rem 1.5rem;
+  }
+
+  .wild-heat-saunas-home .section--light {
+    background: var(--pd-off-white);
+  }
+
+  .wild-heat-saunas-home .section--teal-wash {
+    background: var(--pd-teal-muted);
+  }
+
+  .wild-heat-saunas-home .section--dark {
+    background: var(--pd-primary);
+  }
+
+  .wild-heat-saunas-home .section__container {
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  .wild-heat-saunas-home .section__header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+    max-width: 660px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .wild-heat-saunas-home .section__header h2 {
+    font-size: clamp(1.7rem, 3vw, 2.5rem);
+    margin-bottom: 0.8rem;
+  }
+
+  .wild-heat-saunas-home .section__header p {
+    color: var(--pd-slate-mid);
+    font-size: 1rem;
+  }
+
+  /* ── SERVICE BLOCKS ── */
+  .wild-heat-saunas-home .home-services {
+    background: var(--pd-warm-white);
+  }
+
+  .wild-heat-saunas-home .service-block {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    margin-bottom: 4.5rem;
+    padding-bottom: 4.5rem;
+    border-bottom: 1px solid rgba(217, 118, 32, 0.12);
+  }
+
+  .wild-heat-saunas-home .service-block:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .wild-heat-saunas-home .service-block__image {
+    border-radius: var(--pd-radius-card);
+    overflow: hidden;
+    box-shadow: var(--pd-shadow-warm);
+  }
+
+  .wild-heat-saunas-home .service-block__image img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .wild-heat-saunas-home .service-block__image:hover img {
+    transform: scale(1.03);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wild-heat-saunas-home .service-block__image img { transition: none; }
+  }
+
+  .wild-heat-saunas-home .service-block__body h3 {
+    font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+    margin-bottom: 0.9rem;
+    color: var(--pd-primary);
+  }
+
+  .wild-heat-saunas-home .service-block__body p {
+    color: var(--pd-slate);
+    margin-bottom: 1rem;
+    font-size: 0.98rem;
+    max-width: 520px;
+  }
+
+  /* ── WHY CHOOSE US ── */
+  .wild-heat-saunas-home .why-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .wild-heat-saunas-home .why-card {
+    background: var(--pd-white);
+    border-radius: var(--pd-radius-card);
+    padding: 2rem 1.8rem;
+    box-shadow: var(--pd-shadow);
+    border: 1px solid rgba(217, 118, 32, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .wild-heat-saunas-home .why-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--pd-shadow-warm);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wild-heat-saunas-home .why-card { transition: none; }
+  }
+
+  .wild-heat-saunas-home .why-card__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--pd-teal-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.1rem;
+    color: var(--pd-teal);
+  }
+
+  .wild-heat-saunas-home .why-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.55rem;
+    color: var(--pd-primary);
+  }
+
+  .wild-heat-saunas-home .why-card p {
+    font-size: 0.92rem;
+    color: var(--pd-slate-mid);
+    line-height: 1.65;
+  }
+
+  /* ── PROCESS ── */
+  .wild-heat-saunas-home .process-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    counter-reset: step-counter;
+  }
+
+  .wild-heat-saunas-home .process-step {
+    display: flex;
+    gap: 1.4rem;
+    align-items: flex-start;
+  }
+
+  .wild-heat-saunas-home .process-step__num {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--pd-cedar);
+    color: var(--pd-white);
+    font-family: var(--pd-font-display);
+    font-size: 1.3rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(160,98,42,0.25);
+  }
+
+  .wild-heat-saunas-home .process-step__body h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+    color: var(--pd-primary);
+  }
+
+  .wild-heat-saunas-home .process-step__body p {
+    font-size: 0.92rem;
+    color: var(--pd-slate-mid);
+  }
+
+  /* ── PRICING ── */
+  .wild-heat-saunas-home .pricing-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .wild-heat-saunas-home .pricing-card {
+    background: var(--pd-white);
+    border-radius: var(--pd-radius-card);
+    padding: 2rem 1.8rem;
+    box-shadow: var(--pd-shadow);
+    border: 1px solid rgba(217, 118, 32, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .wild-heat-saunas-home .pricing-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--pd-cedar) 0%, var(--pd-teal) 100%);
+    border-radius: var(--pd-radius-card) var(--pd-radius-card) 0 0;
+  }
+
+  .wild-heat-saunas-home .pricing-card__tier {
+    font-family: var(--pd-font-body);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--pd-teal);
+    margin-bottom: 0.5rem;
+  }
+
+  .wild-heat-saunas-home .pricing-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .wild-heat-saunas-home .pricing-card .price-range {
+    font-family: var(--pd-font-display);
+    font-size: 1.7rem;
+    color: var(--pd-cedar);
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+  }
+
+  .wild-heat-saunas-home .pricing-card p {
+    font-size: 0.92rem;
+    color: var(--pd-slate-mid);
+  }
+
+  .wild-heat-saunas-home .pricing-note {
+    background: var(--pd-teal-muted);
+    border-radius: var(--pd-radius-card);
+    padding: 1.4rem 1.8rem;
+    font-size: 0.93rem;
+    color: var(--pd-slate);
+    border-left: 3px solid var(--pd-teal);
+  }
+
+  /* ── PRE-BUILT SAUNAS ── */
+  .wild-heat-saunas-home .prebuilt-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    margin-bottom: 2.5rem;
+  }
+
+  @media (min-width: 560px) {
+    .wild-heat-saunas-home .prebuilt-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 860px) {
+    .wild-heat-saunas-home .prebuilt-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .wild-heat-saunas-home .prebuilt-card {
+    background: var(--pd-white);
+    border-radius: var(--pd-radius-card);
+    box-shadow: var(--pd-shadow);
+    border: 1px solid rgba(217, 118, 32, 0.12);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .wild-heat-saunas-home .prebuilt-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--pd-shadow-warm);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wild-heat-saunas-home .prebuilt-card { transition: none; }
+  }
+
+.wild-heat-saunas-home .prebuilt-card__image {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(160deg, #EFE6DA 0%, #E4DCCF 100%);
+  color: var(--pd-cedar);
+  border-bottom: 1px solid rgba(217, 118, 32, 0.12);
+}
+
+.wild-heat-saunas-home .prebuilt-card__image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+  .wild-heat-saunas-home .prebuilt-card__image svg {
+    width: 44px;
+    height: 44px;
+    opacity: 0.55;
+  }
+
+  .wild-heat-saunas-home .prebuilt-card__image-label {
+    font-family: var(--pd-font-body);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(160,98,42,0.65);
+  }
+
+  .wild-heat-saunas-home .prebuilt-card__badge {
+    position: absolute;
+    top: 0.8rem;
+    left: 0.8rem;
+    background: var(--pd-primary);
+    color: var(--pd-white);
+    font-family: var(--pd-font-body);
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.32rem 0.65rem;
+    border-radius: 40px;
+  }
+
+  .wild-heat-saunas-home .prebuilt-card__body {
+    padding: 1.5rem 1.5rem 1.7rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .wild-heat-saunas-home .prebuilt-card__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .wild-heat-saunas-home .prebuilt-card__size {
+    font-family: var(--pd-font-body);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--pd-teal);
+  }
+
+  .wild-heat-saunas-home .prebuilt-card__capacity-pill {
+    flex-shrink: 0;
+    background: var(--pd-teal-muted);
+    color: var(--pd-teal);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.25rem 0.65rem;
+    border-radius: 40px;
+    white-space: nowrap;
+  }
+
+  .wild-heat-saunas-home .prebuilt-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .wild-heat-saunas-home .prebuilt-card__specs {
+    list-style: none;
+    font-size: 0.85rem;
+    color: var(--pd-slate-mid);
+    margin-bottom: 1.4rem;
+    display: grid;
+    gap: 0.4rem;
+  }
+
+  .wild-heat-saunas-home .prebuilt-card__specs li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .wild-heat-saunas-home .prebuilt-card__specs li span:last-child {
+    color: var(--pd-slate);
+    font-weight: 600;
+  }
+
+  .wild-heat-saunas-home .prebuilt-card__prices {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid rgba(217, 118, 32, 0.18);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1.3rem;
+    margin-top: auto;
+  }
+
+  .wild-heat-saunas-home .prebuilt-card__price-option {
+    padding: 0.85rem 0.7rem;
+    text-align: center;
+    background: var(--pd-off-white);
+  }
+
+  .wild-heat-saunas-home .prebuilt-card__price-option + .prebuilt-card__price-option {
+    border-left: 1px solid rgba(217, 118, 32, 0.18);
+    background: var(--pd-teal-muted);
+  }
+
+  .wild-heat-saunas-home .prebuilt-card__price-label {
+    display: block;
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--pd-slate-mid);
+    margin-bottom: 0.3rem;
+    white-space: nowrap;
+  }
+
+  .wild-heat-saunas-home .prebuilt-card__price-value {
+    display: block;
+    font-family: var(--pd-font-display);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--pd-cedar);
+  }
+
+  .wild-heat-saunas-home .prebuilt-card__cta {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.78rem;
+    padding: 0.75rem 1.4rem;
+  }
+
+  /* ── LOCAL AREAS ── */
+  .wild-heat-saunas-home .areas-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .wild-heat-saunas-home .area-chip {
+    background: var(--pd-white);
+    border: 1px solid rgba(217, 118, 32, 0.25);
+    border-radius: 40px;
+    padding: 0.45rem 1rem;
+    font-size: 0.84rem;
+    font-weight: 500;
+    color: var(--pd-slate);
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .wild-heat-saunas-home .area-chip:hover {
+    background: var(--pd-teal);
+    color: var(--pd-white);
+    border-color: var(--pd-teal);
+  }
+
+  /* ── TESTIMONIALS ── */
+  .wild-heat-saunas-home .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .wild-heat-saunas-home .testimonial-card {
+    background: var(--pd-white);
+    border-radius: var(--pd-radius-card);
+    padding: 2rem 1.8rem;
+    box-shadow: var(--pd-shadow);
+    border: 1px solid rgba(217, 118, 32, 0.1);
+    position: relative;
+  }
+
+  .wild-heat-saunas-home .testimonial-card::before {
+    content: '\201C';
+    font-family: var(--pd-font-display);
+    font-size: 4rem;
+    color: var(--pd-teal-muted);
+    position: absolute;
+    top: 0.5rem;
+    left: 1.2rem;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .wild-heat-saunas-home .testimonial-card__stars {
+    color: var(--pd-gold);
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.9rem;
+  }
+
+  .wild-heat-saunas-home .testimonial-card__body {
+    font-size: 0.97rem;
+    color: var(--pd-slate);
+    margin-bottom: 1.2rem;
+    line-height: 1.75;
+    padding-top: 1rem;
+  }
+
+  .wild-heat-saunas-home .testimonial-card__author {
+    font-weight: 700;
+    font-size: 0.88rem;
+    color: var(--pd-primary);
+  }
+
+  .wild-heat-saunas-home .testimonial-card__location {
+    font-size: 0.82rem;
+    color: var(--pd-slate-mid);
+  }
+
+  /* ── FAQ ── */
+  .wild-heat-saunas-home .faq-list {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .wild-heat-saunas-home .faq-item {
+    border-bottom: 1px solid rgba(217, 118, 32, 0.15);
+    padding: 1.6rem 0;
+  }
+
+  .wild-heat-saunas-home .faq-item:first-child {
+    border-top: 1px solid rgba(217, 118, 32, 0.15);
+  }
+
+  .wild-heat-saunas-home .faq-item__question {
+    font-family: var(--pd-font-display);
+    font-size: 1.05rem;
+    color: var(--pd-primary);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    list-style: none;
+    user-select: none;
+  }
+
+  .wild-heat-saunas-home .faq-item__question::-webkit-details-marker { display: none; }
+
+  .wild-heat-saunas-home .faq-item__question::after {
+    content: '+';
+    font-family: var(--pd-font-body);
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--pd-teal);
+    flex-shrink: 0;
+    line-height: 1.2;
+    transition: transform 0.2s ease;
+  }
+
+  .wild-heat-saunas-home details[open] .faq-item__question::after {
+    content: '−';
+  }
+
+  .wild-heat-saunas-home .faq-item__answer {
+    font-size: 0.95rem;
+    color: var(--pd-slate);
+    line-height: 1.8;
+    padding-top: 1rem;
+    max-width: 680px;
+  }
+
+  /* ── QUOTE FORM SECTION ── */
+  .wild-heat-saunas-home .home-cta-section {
+    background: linear-gradient(
+      145deg,
+      var(--pd-primary) 0%,
+      #241C14 60%,
+      #140F0A 100%
+    );
+    position: relative;
+    overflow: hidden;
+  }
+
+  .wild-heat-saunas-home .home-cta-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 90% 10%, rgba(217, 118, 32, 0.12) 0%, transparent 55%),
+                radial-gradient(ellipse at 10% 90%, rgba(160,98,42,0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .wild-heat-saunas-home .home-cta__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .wild-heat-saunas-home .home-cta__copy h2 {
+    font-size: clamp(1.7rem, 3vw, 2.6rem);
+    color: var(--pd-white);
+    margin-bottom: 1rem;
+  }
+
+  .wild-heat-saunas-home .home-cta__copy p {
+    color: rgba(255,255,255,0.72);
+    font-size: 0.98rem;
+    margin-bottom: 1.6rem;
+    max-width: 440px;
+  }
+
+  .wild-heat-saunas-home .home-cta__call {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--pd-teal-light);
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .wild-heat-saunas-home .home-cta__call:hover { color: var(--pd-white); }
+  .wild-heat-saunas-home .home-cta__call:focus-visible { outline: 3px solid var(--pd-teal-light); outline-offset: 3px; }
+
+  .wild-heat-saunas-home .quote-form {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--pd-radius-card);
+    padding: 2.2rem 1.8rem;
+    backdrop-filter: blur(6px);
+  }
+
+  .wild-heat-saunas-home .quote-form h3 {
+    color: var(--pd-white);
+    font-size: 1.25rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .wild-heat-saunas-home .form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .wild-heat-saunas-home .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .wild-heat-saunas-home .form-group label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+  }
+
+  .wild-heat-saunas-home .form-group input,
+  .wild-heat-saunas-home .form-group select,
+  .wild-heat-saunas-home .form-group textarea {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    font-family: var(--pd-font-body);
+    font-size: 0.95rem;
+    color: var(--pd-white);
+    outline: none;
+    transition: border-color 0.2s ease;
+    width: 100%;
+  }
+
+  .wild-heat-saunas-home .form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.6)' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.4rem;
+  }
+
+  .wild-heat-saunas-home .form-group select option {
+    color: var(--pd-primary);
+    background: var(--pd-white);
+  }
+
+  .wild-heat-saunas-home .form-group input::placeholder,
+  .wild-heat-saunas-home .form-group textarea::placeholder {
+    color: rgba(255,255,255,0.35);
+  }
+
+  .wild-heat-saunas-home .form-group input:focus,
+  .wild-heat-saunas-home .form-group select:focus,
+  .wild-heat-saunas-home .form-group textarea:focus {
+    border-color: var(--pd-teal-light);
+    background-color: rgba(255,255,255,0.1);
+  }
+
+  .wild-heat-saunas-home .form-group textarea {
+    resize: vertical;
+    min-height: 110px;
+  }
+
+  .wild-heat-saunas-home .form-submit {
+    margin-top: 1.2rem;
+  }
+
+  .wild-heat-saunas-home .btn-form {
+    width: 100%;
+    justify-content: center;
+    background: var(--pd-cedar);
+    color: var(--pd-white);
+    border: 2px solid var(--pd-cedar);
+    font-size: 0.88rem;
+    padding: 1rem 1.8rem;
+    border-radius: var(--pd-radius-btn);
+    font-family: var(--pd-font-body);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .wild-heat-saunas-home .btn-form:hover {
+    background: var(--pd-cedar-light);
+    border-color: var(--pd-cedar-light);
+    transform: translateY(-2px);
+  }
+
+  .wild-heat-saunas-home .btn-form:focus-visible {
+    outline: 3px solid var(--pd-teal-light);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wild-heat-saunas-home .btn-form { transition: none; }
+  }
+
+  /* ── RESPONSIVE 768px ── */
+  @media (min-width: 768px) {
+    .wild-heat-saunas-home .home-hero__content { padding: 8rem 2.5rem 6rem; }
+
+    .wild-heat-saunas-home .home-hero__trust { flex-direction: row; flex-wrap: wrap; }
+
+    .wild-heat-saunas-home .home-intro__container { grid-template-columns: 1fr 1fr; }
+
+    .wild-heat-saunas-home .why-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .wild-heat-saunas-home .process-steps { grid-template-columns: repeat(2, 1fr); }
+
+    .wild-heat-saunas-home .pricing-cards { grid-template-columns: repeat(3, 1fr); }
+
+    .wild-heat-saunas-home .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .wild-heat-saunas-home .home-cta__grid { grid-template-columns: 1fr 1fr; align-items: start; }
+
+    .wild-heat-saunas-home .form-row { grid-template-columns: 1fr 1fr; }
+
+    .wild-heat-saunas-home .service-block__image img { height: 360px; }
+  }
+
+  /* ── RESPONSIVE 1024px ── */
+  @media (min-width: 1024px) {
+    .wild-heat-saunas-home .home-intro { padding: 7rem 2.5rem 6rem; }
+
+    .wild-heat-saunas-home .section { padding: 6.5rem 2.5rem; }
+
+    .wild-heat-saunas-home .service-block { grid-template-columns: 1fr 1fr; gap: 4rem; }
+
+    .wild-heat-saunas-home .service-block.reverse .service-block__image { order: 2; }
+    .wild-heat-saunas-home .service-block.reverse .service-block__body { order: 1; }
+
+    .wild-heat-saunas-home .why-grid { grid-template-columns: repeat(3, 1fr); }
+
+    .wild-heat-saunas-home .process-steps { grid-template-columns: repeat(4, 1fr); }
+
+    .wild-heat-saunas-home .testimonials-grid { grid-template-columns: repeat(3, 1fr); }
+
+    .wild-heat-saunas-home .service-block__image img { height: 420px; }
+  }
+
+  /* ── STICKY MOBILE CTA BAR ── */
+  .wild-heat-saunas-home .mobile-cta-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: var(--pd-primary);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 -6px 24px rgba(0,0,0,0.18);
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+
+  .wild-heat-saunas-home .mobile-cta-bar a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    padding: 0.7rem 0.4rem;
+    font-family: var(--pd-font-body);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--pd-white);
+    text-decoration: none;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .wild-heat-saunas-home .mobile-cta-bar a:last-child {
+    border-right: none;
+    background: var(--pd-cedar);
+  }
+
+  .wild-heat-saunas-home .mobile-cta-bar a svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .wild-heat-saunas-home.has-mobile-cta {
+    padding-bottom: 62px;
+  }
+
+  @media (min-width: 860px) {
+    .wild-heat-saunas-home .mobile-cta-bar {
+      display: none;
+    }
+
+    .wild-heat-saunas-home.has-mobile-cta {
+      padding-bottom: 0;
+    }
+  }
+
+  /* ── BUILD PROCESS: VIDEO + PHOTOS ── */
+  .wild-heat-saunas-home .build-media {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .wild-heat-saunas-home .build-videos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 700px) {
+    .wild-heat-saunas-home .build-videos {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .wild-heat-saunas-home .build-video-card {
+    border-radius: var(--pd-radius-card);
+    overflow: hidden;
+    box-shadow: var(--pd-shadow-warm);
+    background: #000;
+  }
+
+  .wild-heat-saunas-home .build-video-card video {
+    width: 100%;
+    aspect-ratio: 16/9;
+    display: block;
+    background: #000;
+  }
+
+  .wild-heat-saunas-home .build-video-card__label {
+    display: block;
+    padding: 0.9rem 1.1rem;
+    font-family: var(--pd-font-body);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--pd-primary);
+    background: var(--pd-white);
+  }
+
+  .wild-heat-saunas-home .build-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  @media (min-width: 480px) {
+    .wild-heat-saunas-home .build-gallery {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .wild-heat-saunas-home .build-gallery__item {
+    aspect-ratio: 1/1;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--pd-shadow);
+  }
+
+  .wild-heat-saunas-home .build-gallery__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .wild-heat-saunas-home .build-gallery__item:hover img {
+    transform: scale(1.06);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wild-heat-saunas-home .build-gallery__item img {
+      transition: none;
+    }
+  }
+
+  .wild-heat-saunas-home .build-gallery-more {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Wild Heat Saunas",
+  "description": "Wild Heat Saunas designs and builds luxury custom home saunas, plus quality pre-built barrel saunas, across Ireland. Bespoke sauna design, build and installation for residential clients throughout Galway and all of Ireland.",
+  "url": "https://wildheatsaunas.ie/",
+  "telephone": "+353876712695",
+  "email": "test@test.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Galway",
+    "addressCountry": "IE"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Galway" },
+    { "@type": "City", "name": "Salthill" },
+    { "@type": "City", "name": "Oranmore" },
+    { "@type": "City", "name": "Athenry" },
+    { "@type": "City", "name": "Tuam" },
+    { "@type": "City", "name": "Clifden" },
+    { "@type": "City", "name": "Ballinasloe" },
+    { "@type": "City", "name": "Loughrea" },
+    { "@type": "City", "name": "Gort" },
+    { "@type": "City", "name": "Oughterard" },
+    { "@type": "City", "name": "Dublin" },
+    { "@type": "City", "name": "Cork" },
+    { "@type": "City", "name": "Limerick" },
+    { "@type": "City", "name": "Sligo" },
+    { "@type": "City", "name": "Westport" },
+    { "@type": "City", "name": "Castlebar" },
+    { "@type": "City", "name": "Roscommon" },
+    { "@type": "Country", "name": "Ireland" }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "10",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Laura" },
+      "reviewBody": "We are very happy with our Sauna, Malcolm and the team were a pleasure to work with",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+    }
+  ],
+  "sameAs": [],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Home Saunas Galway",
+  "description": "Bespoke home sauna design, build and installation, plus pre-built barrel saunas, across Galway and all of Ireland. Indoor, outdoor, barrel and steam room options.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Wild Heat Saunas",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Galway",
+      "addressCountry": "IE"
+    }
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Ireland"
+  },
+  "serviceType": "Sauna Design, Build and Installation"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does a home sauna cost in Ireland?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Home sauna costs in Ireland vary widely depending on size, materials, and complexity. A compact indoor cabin sauna typically starts from around €4,000–€7,000 fully installed. A mid-range custom build with premium timber and integrated controls usually falls in the €8,000–€15,000 range. Larger bespoke outdoor saunas or full steam rooms can range from €15,000 upwards. Our pre-built barrel saunas start from €4,400. We provide fully itemised free quotes, so you know exactly what you are getting before any work begins."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need planning permission for a home sauna in Ireland?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In most cases, a residential sauna — particularly an indoor installation or a modest outdoor structure — falls within normal exempted development under Irish planning regulations. However, this depends on the size of the structure, its proximity to boundaries, and your local authority's specific rules. We advise all clients on this during the design consultation and, where required, can guide you through the appropriate process."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What types of sauna do you build?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We design and build a full range of home saunas: traditional Finnish dry saunas, infrared saunas, barrel saunas, outdoor cabin saunas, and full steam rooms. We also offer a range of pre-built barrel saunas ready to order. Every custom sauna is bespoke — designed around your space, your lifestyle, and the finishes you love. We work with premium cedar, thermowood, and other natural timbers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to build a home sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Timelines depend on the scope of work. A straightforward indoor sauna installation typically takes between three and seven days on site. A larger custom outdoor structure can take one to three weeks. Pre-built barrel saunas are typically the fastest option. We will give you a clear project timeline at the design stage, and our team keeps disruption to your home to an absolute minimum."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you install saunas outside of Galway?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. While we are based in Galway, Wild Heat Saunas works across all of Ireland — Leinster, Munster, Connacht, and Ulster. We have installed home saunas from Cork to Donegal, Dublin to Clifden. Travel costs may apply for certain areas; we will be transparent about this in your quote."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are your saunas fully custom, or do you sell pre-made kits?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer both. Every custom sauna we design and install is tailored to your dimensions, your timber preference, your heating system, and your aesthetic vision. We also stock a range of high-quality pre-built barrel saunas, ready to order in pinewood or thermowood, for clients who want a faster turnaround at a lower price point."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What heating systems do you use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We install a range of sauna heating systems to suit different preferences and budgets, including traditional wood-burning kiuas, electric sauna heaters, and infrared panels. We work with market-leading heater brands known for reliability and efficiency, and will advise on the most suitable option for your chosen sauna type and usage habits."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What timber do you use for your saunas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We primarily work with Western Red Cedar — prized for its natural thermal resistance, low resin content, and beautiful warm tone. We also use thermowood (heat-treated timber), Nordic spruce, and aspen depending on the application. Our pre-built barrel saunas are available in pinewood or thermowood. All timber is responsibly sourced. We will walk you through the options at your consultation so you can choose what suits your space and taste."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Wild Heat Saunas fully insured?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Wild Heat Saunas carries full public liability insurance and all of our installation work is carried out to the highest professional standards. We are happy to provide proof of insurance on request."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the process from first contact to completed sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The journey starts with a free consultation — either on-site in Galway and surrounds, or by video for clients further afield. We then produce a bespoke design and fully itemised quotation, or point you to the right pre-built model. Once you are happy to proceed, we schedule your build or delivery. Our team handles everything: groundwork (if required), framing, insulation, cladding, heater installation, and finishing. We hand over a completed, tested sauna ready for its first session."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the health benefits of a home sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Regular sauna use is widely associated with a range of wellbeing benefits, including improved cardiovascular circulation, muscle recovery, stress relief, better sleep, and skin health. Having a sauna at home means you can build a consistent wellness habit without the need to travel to a gym or spa. We always recommend consulting your GP if you have any underlying health conditions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I get a quote for a home sauna?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Simply fill in the quick quote form on this page, or call us directly on 087 671 2695. We respond to all enquiries promptly. There is no obligation — just an honest conversation about what is possible for your home and budget."
+      }
+    }
+  ]
+}
+</script>
+
+<div class="wild-heat-saunas-home has-mobile-cta">
+
+  <!-- ══ HERO ══ -->
+  <section class="home-hero" aria-labelledby="hero-h1">
+    <div class="home-hero__bg" role="img" aria-label="Luxury cedar home sauna interior, warm lighting, Galway"></div>
+    <div class="home-hero__overlay"></div>
+    <div class="home-hero__steam"></div>
+    <div class="home-hero__content">
+      <div class="home-hero__inner">
+        <span class="eyebrow eyebrow--white">Galway &amp; All Ireland</span>
+        <h1 class="home-hero__h1" id="hero-h1">
+          Bespoke <em>Outdoor Sauna</em><br>Builders in Ireland
+        </h1>
+        <p class="home-hero__sub">Irish-built, custom-sized outdoor saunas — or a quality pre-built barrel sauna, delivered fast. Designed around your space, your budget, and how you actually live.</p>
+        <p class="home-hero__price">Custom builds from <strong>€4,000</strong> · Pre-built barrels from <strong>€4,400</strong></p>
+        <ul class="home-hero__trust" aria-label="Key trust points">
+          <li>
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="10" fill="rgba(217, 118, 32, 0.25)"/><path d="M6 10.5l3 3 5-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Bespoke &amp; Pre-Built Options Available
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="10" fill="rgba(217, 118, 32, 0.25)"/><path d="M6 10.5l3 3 5-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            5-Star Rated — 10 Google Reviews
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="10" fill="rgba(217, 118, 32, 0.25)"/><path d="M6 10.5l3 3 5-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Fully Insured &amp; Professionally Installed
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="10" fill="rgba(217, 118, 32, 0.25)"/><path d="M6 10.5l3 3 5-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Free Consultations — Fast, No-Obligation Quotes
+          </li>
+        </ul>
+        <div class="home-hero__ctas">
+          <a href="/contact/" class="btn btn-primary">Get a Fast Free Quote</a>
+          <a href="tel:+353876712695" class="btn btn-outline-white">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.81 19.79 19.79 0 01.02 2.2 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+            Call Us Today
+          </a>
+          <a href="https://wa.me/353876712695" class="btn btn-outline-white" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave -->
+  <div class="wave-divider" aria-hidden="true">
+    <svg viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 48 C360 0 1080 0 1440 48 L1440 0 L0 0 Z" fill="#14110D"/>
+      <path d="M0 48 C360 20 1080 20 1440 48" stroke="rgba(217, 118, 32, 0.18)" stroke-width="1" fill="none"/>
+    </svg>
+  </div>
+
+  <!-- ══ INTRO SPLIT ══ -->
+  <section class="home-intro" aria-labelledby="intro-h2">
+    <div class="home-intro__container">
+      <div class="home-intro__text">
+        <span class="eyebrow">Why Wild Heat Saunas</span>
+        <h2 id="intro-h2">Home Saunas in Galway —<br>Built for the Way You Live</h2>
+        <p>There is something deeply right about a home sauna on the west coast of Ireland. You come in from the Atlantic wind, step into warm cedar heat, and the world slows down. At Wild Heat Saunas, we have spent over five years making that experience possible for homeowners across Galway, Connacht, and the length and breadth of Ireland. Whether you want a fully bespoke build or a quality pre-built barrel sauna, we make it happen.</p>
+        <p>We know that commissioning a home sauna is a significant decision. You want it done properly, by people who take the craft seriously. That is why every project starts with a real conversation: about your space, your lifestyle, your budget, and exactly what a finished sauna should feel like in your home. We handle design, materials, installation, and handover — and we are with you throughout. Not a middleman. Not just a kit reseller. A dedicated build team.</p>
+        <p>Whether you are imagining a compact indoor cabin off your utility room, a stunning pre-built outdoor barrel sauna on your decking, or a full bespoke wellness space with steam room, we have the experience to bring it to life. Come in from the cold — this is where it starts.</p>
+        <div class="home-intro__badges" role="list" aria-label="Trust credentials">
+          <div class="badge" role="listitem">
+            <span class="stars" aria-label="5 stars out of 5">★★★★★</span>
+            <span>5.0 on Google (10 Reviews)</span>
+          </div>
+          <div class="badge" role="listitem">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Fully Insured</span>
+          </div>
+          <div class="badge" role="listitem">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>5+ Years Building Saunas</span>
+          </div>
+          <div class="badge" role="listitem">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Galway &amp; All Ireland</span>
+          </div>
+        </div>
+      </div>
+      <div class="home-intro__image">
+        <img
+          src="/assets/images/cabin-sauna5.jpeg"
+          alt="Custom cedar home sauna interior built by Wild Heat Saunas, Galway"
+          width="600"
+          height="500"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SERVICES ══ -->
+  <section class="section home-services section--light" aria-labelledby="services-h2">
+    <div class="section__container">
+      <header class="section__header">
+        <span class="eyebrow eyebrow--cedar">What We Build</span>
+        <h2 id="services-h2">Bespoke Sauna Design, Build &amp; Installation</h2>
+        <p>Every project is different. Here is how we bring your home sauna to life — from first sketch to first heat session.</p>
+      </header>
+
+      <div class="service-block" aria-label="Sauna design service">
+        <div class="service-block__image">
+          <img
+            src="/assets/images/sauna1.jpg"
+            alt="Sauna design consultation and planning for a Galway home"
+            width="640"
+            height="480"
+            loading="lazy"
+          />
+        </div>
+        <div class="service-block__body">
+          <span class="eyebrow">Service 01</span>
+          <h3>Sauna Design</h3>
+          <p>A great home sauna begins with a design that genuinely fits your space — not a template dropped into your bathroom or garden. We start with a thorough site consultation, taking exact measurements and talking through how you live, who will use the sauna, and what atmosphere you are after. From there, we produce detailed layout drawings and material specifications so you can see exactly what you are getting before a single piece of timber is cut.</p>
+          <p>We design for all settings: indoor conversions, garden buildings, outbuildings, and purpose-built wellness pods. If the space exists, we will find the right sauna for it. If you are not sure yet what is possible, that is exactly what the consultation is for.</p>
+          <a href="/our-process/" class="btn btn-outline-teal">Our Process</a>
+        </div>
+      </div>
+
+      <div class="service-block reverse" aria-label="Sauna build service">
+        <div class="service-block__image">
+          <img
+            src="/assets/images/sauna2.jpg"
+            alt="Cedar sauna being built and constructed in an Irish home"
+            width="640"
+            height="480"
+            loading="lazy"
+          />
+        </div>
+        <div class="service-block__body">
+          <span class="eyebrow">Service 02</span>
+          <h3>Sauna Build</h3>
+          <p>We build every custom sauna ourselves — no subcontractors, no cut corners. Our team works with premium natural timbers, principally Western Red Cedar and thermowood, chosen for their heat resistance, low resin content, and beautiful ageing. Every element — framing, insulation, cladding, benching, ventilation, and lighting — is constructed with the same careful attention to quality.</p>
+          <p>We build indoor saunas (converting spare rooms, utility spaces, or basement areas), standalone outdoor cabins, barrel saunas, and integrated wellness rooms with separate steam and cold plunge areas. Prefer a faster, more affordable route? Our pre-built barrel saunas are ready to order and delivered to your door. Whatever the format, the standard of finish is the same: the kind you are proud to show guests and that gets better with every year of use.</p>
+          <a href="/contact/" class="btn btn-outline-teal">Get a Quote</a>
+        </div>
+      </div>
+
+      <div class="service-block" aria-label="Sauna installation service">
+        <div class="service-block__image">
+          <img
+            src="/assets/images/sauna3.jpg"
+            alt="Professional sauna installation completed in Galway, Ireland"
+            width="640"
+            height="480"
+            loading="lazy"
+          />
+        </div>
+        <div class="service-block__body">
+          <span class="eyebrow">Service 03</span>
+          <h3>Sauna Installation</h3>
+          <p>Installation day is where the design becomes real. Our team arrives with everything needed to complete your sauna to the agreed specification: heater units, controls, ventilation fittings, lighting, and all finishing timber. We work cleanly, protect your home throughout, and leave the site as tidy as we found it.</p>
+          <p>We install traditional electric sauna heaters (kiuas), wood-burning stoves, and infrared systems, wiring and commissioning each unit to manufacturer and safety standards. Before we hand over the keys, we run a full heat test with you present — so your first solo session is already your second. Every installation includes a walkthrough of how to use and maintain your sauna for years to come.</p>
+          <a href="/contact/" class="btn btn-outline-teal">Book Installation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ WHY CHOOSE US ══ -->
+  <section class="section section--teal-wash" aria-labelledby="why-h2">
+    <div class="section__container">
+      <header class="section__header">
+        <span class="eyebrow">Why Wild Heat Saunas</span>
+        <h2 id="why-h2">What Makes Us Different</h2>
+        <p>Five years, hundreds of conversations, and a lot of beautifully warm timber. Here is what sets us apart.</p>
+      </header>
+      <div class="why-grid" role="list">
+        <div class="why-card" role="listitem">
+          <div class="why-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>Built in Ireland</h3>
+          <p>Every sauna is built by an Irish team who understand the Irish climate — from Galway to Donegal, Cork to Dublin.</p>
+        </div>
+        <div class="why-card" role="listitem">
+          <div class="why-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3>Custom Sizing</h3>
+          <p>Every build is measured and designed around your actual space — not a fixed catalogue size. Small garden or big field, we'll fit it.</p>
+        </div>
+        <div class="why-card" role="listitem">
+          <div class="why-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/></svg>
+          </div>
+          <h3>Free Quotations</h3>
+          <p>Every consultation and quote is completely free, with no obligation. You'll know your exact price before you commit to anything.</p>
+        </div>
+        <div class="why-card" role="listitem">
+          <div class="why-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>After-Sales Support</h3>
+          <p>We don't disappear once the sauna's built. We're on hand for maintenance advice and support long after handover.</p>
+        </div>
+        <div class="why-card" role="listitem">
+          <div class="why-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Qualified Tradesmen</h3>
+          <p>Every build is carried out by experienced, qualified tradesmen — fully insured, with a 5.0 Google rating to back it up.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ HOW IT WORKS / PROCESS ══ -->
+  <section class="section" aria-labelledby="process-h2">
+    <div class="section__container">
+      <header class="section__header">
+        <span class="eyebrow">How It Works</span>
+        <h2 id="process-h2">From First Call to First Heat Session</h2>
+        <p>A clear, unhurried process — so you always know exactly where your project stands.</p>
+      </header>
+      <div class="process-steps" role="list">
+        <div class="process-step" role="listitem">
+          <div class="process-step__num" aria-hidden="true">1</div>
+          <div class="process-step__body">
+            <h3>Free Consultation</h3>
+            <p>We start with a conversation — on-site in Galway and surrounds, or by video for clients further afield. We listen first, then advise. No sales pressure, no jargon. Just an honest discussion about what is possible for your home and budget.</p>
+          </div>
+        </div>
+        <div class="process-step" role="listitem">
+          <div class="process-step__num" aria-hidden="true">2</div>
+          <div class="process-step__body">
+            <h3>Design &amp; Quote</h3>
+            <p>We produce a bespoke design with layout drawings and a fully itemised quotation, or point you to the right pre-built model. You see everything — materials, dimensions, heating system, finishes, and total cost — before you commit to anything. Transparent from the start.</p>
+          </div>
+        </div>
+        <div class="process-step" role="listitem">
+          <div class="process-step__num" aria-hidden="true">3</div>
+          <div class="process-step__body">
+            <h3>Build &amp; Installation</h3>
+            <p>Once you are happy to proceed, we schedule your build or delivery. Our team handles everything on site — framing, insulation, cladding, heater installation, electrical connections, and finishing. We work cleanly and efficiently, minimising disruption to your home throughout.</p>
+          </div>
+        </div>
+        <div class="process-step" role="listitem">
+          <div class="process-step__num" aria-hidden="true">4</div>
+          <div class="process-step__body">
+            <h3>Handover &amp; First Session</h3>
+            <p>We run a full heat test with you present, walk you through operation and maintenance, and make sure everything is exactly right before we leave. Your sauna is ready to use from day one. We remain available after handover should you have any questions.</p>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:3rem;">
+        <a href="/our-process/" class="btn btn-primary">See Our Full Process</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ BUILD PROCESS: VIDEO + PHOTOS ══ -->
+  <section class="section section--teal-wash" aria-labelledby="build-media-h2">
+    <div class="section__container">
+      <header class="section__header">
+        <span class="eyebrow eyebrow--cedar">See It For Yourself</span>
+        <h2 id="build-media-h2">Explore our Sauna</h2>
+        <p>From first cut to final handover — real builds, real timber, real Irish sites.</p>
+      </header>
+      <div class="build-media">
+        <div class="build-videos">
+          <div class="build-video-card">
+            <video controls preload="metadata" poster="/assets/images/build1.jpeg" width="1280" height="720">
+              <source src="/assets/images/vid1.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="/assets/images/vid1.mp4">Watch the video directly</a>.
+            </video>
+            <span class="build-video-card__label">Full Build Walkthrough</span>
+          </div>
+          <div class="build-video-card">
+            <video controls preload="metadata" poster="/assets/images/build2.jpeg" width="1280" height="720">
+              <source src="/assets/images/vid2.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="/assets/images/vid2.mp4">Watch the video directly</a>.
+            </video>
+            <span class="build-video-card__label">Customer Irish Sauna</span>
+          </div>
+        </div>
+        <div class="build-gallery" role="list" aria-label="Photos from recent sauna builds">
+          <div class="build-gallery__item" role="listitem">
+            <img src="/assets/images/barrel-sauna1.jpeg" alt="Wild Heat Saunas barrel sauna 1" width="400" height="400" loading="lazy">
+          </div>
+          <div class="build-gallery__item" role="listitem">
+            <img src="/assets/images/barrel-sauna5.jpeg" alt="Wild Heat Saunas barrel sauna 5" width="400" height="400" loading="lazy">
+          </div>
+          <div class="build-gallery__item" role="listitem">
+            <img src="/assets/images/barrel-sauna12.jpeg" alt="Wild Heat Saunas barrel sauna 12" width="400" height="400" loading="lazy">
+          </div>
+          <div class="build-gallery__item" role="listitem">
+            <img src="/assets/images/sauna-interior1.jpeg" alt="Sauna interior with benches and stove 1" width="400" height="400" loading="lazy">
+          </div>
+          <div class="build-gallery__item" role="listitem">
+            <img src="/assets/images/sauna-interior5.jpeg" alt="Sauna interior with benches and stove 5" width="400" height="400" loading="lazy">
+          </div>
+          <div class="build-gallery__item" role="listitem">
+            <img src="/assets/images/hot-tub1.jpeg" alt="Wood-fired hot tub 1" width="400" height="400" loading="lazy">
+          </div>
+          <div class="build-gallery__item" role="listitem">
+            <img src="/assets/images/hot-tub4.jpeg" alt="Wood-fired hot tub 4" width="400" height="400" loading="lazy">
+          </div>
+          <div class="build-gallery__item" role="listitem">
+            <img src="/assets/images/cabin-sauna1.jpeg" alt="Cabin-style sauna 1" width="400" height="400" loading="lazy">
+          </div>
+          <div class="build-gallery__item" role="listitem">
+            <img src="/assets/images/sauna-build1.jpeg" alt="Sauna build in progress 1" width="400" height="400" loading="lazy">
+          </div>
+        </div>
+        <div class="build-gallery-more">
+          <a href="/gallery/" class="btn btn-outline-teal">View Full Gallery</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PRICING GUIDANCE ══ -->
+  <section class="section section--light" aria-labelledby="pricing-h2">
+    <div class="section__container">
+      <header class="section__header">
+        <span class="eyebrow eyebrow--cedar">Pricing Guidance</span>
+        <h2 id="pricing-h2">What Does a Custom Home Sauna Cost in Ireland?</h2>
+        <p>Honest guidance — because you deserve to know what to budget before you pick up the phone.</p>
+      </header>
+      <div class="pricing-cards" role="list">
+        <div class="pricing-card" role="listitem">
+          <div class="pricing-card__tier">Compact</div>
+          <h3>Indoor Cabin Sauna</h3>
+          <div class="price-range">€4,000 – €8,000</div>
+          <p>A well-crafted indoor sauna for one to three people, fitted within an existing room or conversion space. Cedar-lined, electric heater, integrated bench and lighting. Ideal for bathrooms, utility rooms, or spare bedrooms.</p>
+        </div>
+        <div class="pricing-card" role="listitem">
+          <div class="pricing-card__tier">Mid-Range</div>
+          <h3>Custom Build or Barrel</h3>
+          <div class="price-range">€8,000 – €15,000</div>
+          <p>A larger custom indoor sauna or a fully bespoke outdoor barrel / cabin sauna. Premium timber, more complex installation, choice of heating system, bespoke benching and ventilation. The sweet spot for most family homes.</p>
+        </div>
+        <div class="pricing-card" role="listitem">
+          <div class="pricing-card__tier">Premium</div>
+          <h3>Bespoke Wellness Space</h3>
+          <div class="price-range">€15,000+</div>
+          <p>A fully bespoke outdoor sauna building, a dual sauna and steam room, or a complete wellness pod with cold plunge integration. Exceptional materials, architectural finishes, and a result that genuinely adds to your property.</p>
+        </div>
+      </div>
+      <div class="pricing-note" role="note">
+        <strong>A note on pricing:</strong> Every custom sauna is unique, so these are indicative ranges — not fixed prices. Your actual quote depends on the size and complexity of the build, chosen timber, heating system, access, groundwork requirements, and site location. We always provide a fully itemised free quote before any work begins, so there are no surprises. Looking for something ready to order? See our pre-built barrel sauna range below. <a href="/contact/" style="color: var(--pd-teal); font-weight:600; text-decoration:none;">Get your free quote today →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PRE-BUILT SAUNAS ══ -->
+  <section class="section section--teal-wash" aria-labelledby="prebuilt-h2">
+    <div class="section__container">
+      <header class="section__header">
+        <span class="eyebrow eyebrow--cedar">Ready to Order</span>
+        <h2 id="prebuilt-h2">Pre-Built Barrel Saunas</h2>
+        <p>Quality barrel saunas in five sizes, ready to order in pinewood or thermowood. Every unit includes an electric Harvia 9kW stove, sauna stones, black alder benches, tempered glass door, and a bitumen shingle roof as standard.</p>
+      </header>
+      <div class="prebuilt-grid" role="list">
+
+        <div class="prebuilt-card" role="listitem">
+          <div class="prebuilt-card__image">
+            <img src="/assets/images/barrel-sauna2.jpeg" alt="XS Barrel Sauna by Wild Heat Saunas" loading="lazy">
+          </div>
+          <div class="prebuilt-card__body">
+            <div class="prebuilt-card__top">
+              <span class="prebuilt-card__size">Extra Small</span>
+              <span class="prebuilt-card__capacity-pill">2–4 people</span>
+            </div>
+            <h3>XS Barrel Sauna</h3>
+            <ul class="prebuilt-card__specs">
+              <li><span>Total length</span><span>200cm</span></li>
+              <li><span>Sauna length</span><span>171cm</span></li>
+              <li><span>Outside diameter</span><span>217cm</span></li>
+            </ul>
+            <div class="prebuilt-card__prices">
+              <div class="prebuilt-card__price-option">
+                <span class="prebuilt-card__price-label">Pinewood</span>
+                <span class="prebuilt-card__price-value">€4,400</span>
+              </div>
+              <div class="prebuilt-card__price-option">
+                <span class="prebuilt-card__price-label">Thermowood</span>
+                <span class="prebuilt-card__price-value">€5,700</span>
+              </div>
+            </div>
+            <a href="/contact/" class="btn btn-outline-teal prebuilt-card__cta">Enquire About XS</a>
+          </div>
+        </div>
+
+        <div class="prebuilt-card" role="listitem">
+          <div class="prebuilt-card__image">
+            <img src="/assets/images/barrel-sauna3.jpeg" alt="S Barrel Sauna by Wild Heat Saunas" loading="lazy">
+          </div>
+          <div class="prebuilt-card__body">
+            <div class="prebuilt-card__top">
+              <span class="prebuilt-card__size">Small</span>
+              <span class="prebuilt-card__capacity-pill">2–4 people</span>
+            </div>
+            <h3>S Barrel Sauna</h3>
+            <ul class="prebuilt-card__specs">
+              <li><span>Total length</span><span>250cm</span></li>
+              <li><span>Terrace length</span><span>60cm</span></li>
+              <li><span>Sauna length</span><span>171cm</span></li>
+              <li><span>Outside diameter</span><span>217cm</span></li>
+            </ul>
+            <div class="prebuilt-card__prices">
+              <div class="prebuilt-card__price-option">
+                <span class="prebuilt-card__price-label">Pinewood</span>
+                <span class="prebuilt-card__price-value">€5,000</span>
+              </div>
+              <div class="prebuilt-card__price-option">
+                <span class="prebuilt-card__price-label">Thermowood</span>
+                <span class="prebuilt-card__price-value">€6,500</span>
+              </div>
+            </div>
+            <a href="/contact/" class="btn btn-outline-teal prebuilt-card__cta">Enquire About S</a>
+          </div>
+        </div>
+
+        <div class="prebuilt-card" role="listitem">
+          <div class="prebuilt-card__image">
+            <img src="/assets/images/barrel-sauna6.jpeg" alt="M Barrel Sauna by Wild Heat Saunas" loading="lazy" >
+          </div>
+          <div class="prebuilt-card__body">
+            <div class="prebuilt-card__top">
+              <span class="prebuilt-card__size">Medium</span>
+              <span class="prebuilt-card__capacity-pill">4–6 people</span>
+            </div>
+            <h3>M Barrel Sauna</h3>
+            <ul class="prebuilt-card__specs">
+              <li><span>Total length</span><span>300cm</span></li>
+              <li><span>Terrace length</span><span>60cm</span></li>
+              <li><span>Sauna length</span><span>221cm</span></li>
+              <li><span>Outside diameter</span><span>217cm</span></li>
+            </ul>
+            <div class="prebuilt-card__prices">
+              <div class="prebuilt-card__price-option">
+                <span class="prebuilt-card__price-label">Pinewood</span>
+                <span class="prebuilt-card__price-value">€5,600</span>
+              </div>
+              <div class="prebuilt-card__price-option">
+                <span class="prebuilt-card__price-label">Thermowood</span>
+                <span class="prebuilt-card__price-value">€7,300</span>
+              </div>
+            </div>
+            <a href="/contact/" class="btn btn-outline-teal prebuilt-card__cta">Enquire About M</a>
+          </div>
+        </div>
+
+        <div class="prebuilt-card" role="listitem">
+          <div class="prebuilt-card__image">
+            <img src="/assets/images/barrel-sauna9.jpeg" alt="L Barrel Sauna by Wild Heat Saunas" loading="lazy" >
+          </div>
+          <div class="prebuilt-card__body">
+            <div class="prebuilt-card__top">
+              <span class="prebuilt-card__size">Large</span>
+              <span class="prebuilt-card__capacity-pill">4–6 people</span>
+            </div>
+            <h3>L Barrel Sauna</h3>
+            <ul class="prebuilt-card__specs">
+              <li><span>Total length</span><span>400cm</span></li>
+              <li><span>Terrace length</span><span>60cm</span></li>
+              <li><span>Sauna length</span><span>221cm</span></li>
+              <li><span>Outside diameter</span><span>217cm</span></li>
+            </ul>
+            <div class="prebuilt-card__prices">
+              <div class="prebuilt-card__price-option">
+                <span class="prebuilt-card__price-label">Pinewood</span>
+                <span class="prebuilt-card__price-value">€7,400</span>
+              </div>
+              <div class="prebuilt-card__price-option">
+                <span class="prebuilt-card__price-label">Thermowood</span>
+                <span class="prebuilt-card__price-value">€9,700</span>
+              </div>
+            </div>
+            <a href="/contact/" class="btn btn-outline-teal prebuilt-card__cta">Enquire About L</a>
+          </div>
+        </div>
+
+        <div class="prebuilt-card" role="listitem">
+          <div class="prebuilt-card__image">
+            <img src="/assets/images/barrel-sauna15.jpeg" alt="XL Barrel Sauna by Wild Heat Saunas" loading="lazy" >
+          </div>
+          <div class="prebuilt-card__body">
+            <div class="prebuilt-card__top">
+              <span class="prebuilt-card__size">Extra Large</span>
+              <span class="prebuilt-card__capacity-pill">6–10 people</span>
+            </div>
+            <h3>XL Barrel Sauna</h3>
+            <ul class="prebuilt-card__specs">
+              <li><span>Total length</span><span>600cm</span></li>
+              <li><span>Terrace length</span><span>60cm</span></li>
+              <li><span>Sauna length</span><span>321cm</span></li>
+              <li><span>Outside diameter</span><span>217cm</span></li>
+            </ul>
+            <div class="prebuilt-card__prices">
+              <div class="prebuilt-card__price-option">
+                <span class="prebuilt-card__price-label">Pinewood</span>
+                <span class="prebuilt-card__price-value">€9,900</span>
+              </div>
+              <div class="prebuilt-card__price-option">
+                <span class="prebuilt-card__price-label">Thermowood</span>
+                <span class="prebuilt-card__price-value">€12,900</span>
+              </div>
+            </div>
+            <a href="/contact/" class="btn btn-outline-teal prebuilt-card__cta">Enquire About XL</a>
+          </div>
+        </div>
+
+      </div>
+      <div class="pricing-note" role="note">
+        <strong>A note on pre-built pricing:</strong> Prices shown are for the sauna unit only and exclude VAT and delivery/installation. Popular upgrades include a wood-burning stove, wooden doors, half or full panoramic windows, and accessory packs — ask us for a full extras price list when you enquire. <a href="/contact/" style="color: var(--pd-teal); font-weight:600; text-decoration:none;">Enquire about a pre-built sauna →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ LOCAL AREAS ══ -->
+  <section class="section" aria-labelledby="areas-h2">
+    <div class="section__container">
+      <div style="display:grid; grid-template-columns:1fr; gap:2.5rem; align-items:start;">
+        <div>
+          <span class="eyebrow">Where We Work</span>
+          <h2 id="areas-h2">Home Saunas Across Galway &amp; All of Ireland</h2>
+          <p style="color: var(--pd-slate); margin-bottom:1rem; max-width:620px; font-size:1rem;">We are based in Galway and regularly build home saunas throughout the city and county — from Salthill and Oranmore to Clifden and Connemara. We also travel the full length and breadth of Ireland for the right project.</p>
+          <p style="color: var(--pd-slate); margin-bottom:1.5rem; max-width:620px; font-size:1rem;">Whether you are in the heart of Dublin, a coastal townland in Mayo, or a rural property in Tipperary — if you want a luxury home sauna built properly, we want to hear from you. Travel costs may apply outside Connacht; we are always transparent about this in your quotation.</p>
+          <div class="areas-list" role="list" aria-label="Service area locations">
+            <span class="area-chip" role="listitem">Galway City</span>
+            <span class="area-chip" role="listitem">Salthill</span>
+            <span class="area-chip" role="listitem">Oranmore</span>
+            <span class="area-chip" role="listitem">Athenry</span>
+            <span class="area-chip" role="listitem">Tuam</span>
+            <span class="area-chip" role="listitem">Loughrea</span>
+            <span class="area-chip" role="listitem">Gort</span>
+            <span class="area-chip" role="listitem">Oughterard</span>
+            <span class="area-chip" role="listitem">Clifden</span>
+            <span class="area-chip" role="listitem">Connemara</span>
+            <span class="area-chip" role="listitem">Ballinasloe</span>
+            <span class="area-chip" role="listitem">Castlebar</span>
+            <span class="area-chip" role="listitem">Westport</span>
+            <span class="area-chip" role="listitem">Sligo</span>
+            <span class="area-chip" role="listitem">Roscommon</span>
+            <span class="area-chip" role="listitem">Dublin</span>
+            <span class="area-chip" role="listitem">Cork</span>
+            <span class="area-chip" role="listitem">Limerick</span>
+            <span class="area-chip" role="listitem">Kilkenny</span>
+            <span class="area-chip" role="listitem">Waterford</span>
+            <span class="area-chip" role="listitem">Wexford</span>
+            <span class="area-chip" role="listitem">Donegal</span>
+            <span class="area-chip" role="listitem">All Ireland</span>
+          </div>
+          <div style="margin-top:2rem;">
+            <a href="/area/" class="btn btn-outline-teal">View All Service Areas</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TESTIMONIALS ══ -->
+  <section class="section section--teal-wash" aria-labelledby="testimonials-h2">
+    <div class="section__container">
+      <header class="section__header">
+        <span class="eyebrow">What Our Clients Say</span>
+        <h2 id="testimonials-h2">5-Star Home Saunas — Straight from the Source</h2>
+        <p>Ten Google reviews, a perfect rating, and clients who come back for more. Here is what they say.</p>
+      </header>
+      <div class="testimonials-grid" role="list">
+        <div class="testimonial-card" role="listitem">
+          <div class="testimonial-card__stars" aria-label="5 stars out of 5">★★★★★</div>
+          <p class="testimonial-card__body">"We are very happy with our Sauna. Malcolm and the team were a pleasure to work with — professional, tidy, and the finish is absolutely beautiful. Exactly what we wanted."</p>
+          <div class="testimonial-card__author">Laura</div>
+          <div class="testimonial-card__location">Galway · Google Review</div>
+        </div>
+        <!-- PLACEHOLDER TESTIMONIAL - replace -->
+        <div class="testimonial-card" role="listitem">
+          <div class="testimonial-card__stars" aria-label="5 stars out of 5">★★★★★</div>
+          <p class="testimonial-card__body">"From the first consultation to the final handover, Wild Heat Saunas made the whole process completely stress-free. The cedar cabin they built for us is stunning — warm, well-made, and exactly what we dreamed of."</p>
+          <div class="testimonial-card__author">Seán &amp; Áine</div>
+          <div class="testimonial-card__location">Salthill, Galway · Google Review</div>
+        </div>
+        <!-- PLACEHOLDER TESTIMONIAL - replace -->
+        <div class="testimonial-card" role="listitem">
+          <div class="testimonial-card__stars" aria-label="5 stars out of 5">★★★★★</div>
+          <p class="testimonial-card__body">"We had a pre-built barrel sauna delivered earlier this year and it has genuinely changed how we spend our weekends. Exceptional quality and a team that clearly care about the craft. Highly recommend."</p>
+          <div class="testimonial-card__author">Fionnuala</div>
+          <div class="testimonial-card__location">Westport, Mayo · Google Review</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- ══ FINAL CTA + FORM ══ -->
+  <section class="section home-cta-section" aria-labelledby="cta-h2">
+    <div class="section__container">
+      <div class="home-cta__grid">
+        <div class="home-cta__copy">
+          <span class="eyebrow eyebrow--white">Get Started Today</span>
+          <h2 id="cta-h2">Ready for Your Own Home Sauna in Galway?</h2>
+          <p>Fill in the form and we will be back in touch quickly — usually within one working day. No hard sell, no obligation. Just a straightforward conversation about your project.</p>
+          <p>Or, if you prefer to talk now:</p>
+          <a href="tel:+353876712695" class="home-cta__call" aria-label="Call Wild Heat Saunas on 087 671 2695">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.81 19.79 19.79 0 01.02 2.2 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+            087 671 2695
+          </a>
+          <p style="margin-top:1.8rem; color:rgba(255,255,255,0.45); font-size:0.82rem;">Wild Heat Saunas · Galway · Ireland<br>Serving all of Ireland · Fully Insured</p>
+        </div>
+        <div>
+          <form name="quote-home" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="quote-form">
+            <input type="hidden" name="form-name" value="quote-home">
+            <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
+            <h3>Get a Fast Free Quote</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="qh-name">Full Name</label>
+                <input type="text" id="qh-name" name="name" placeholder="Your name" required autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label for="qh-phone">Phone Number</label>
+                <input type="tel" id="qh-phone" name="phone" placeholder="+353 ..." required autocomplete="tel">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="qh-budget">Budget Range</label>
+                <select id="qh-budget" name="budget" required>
+                  <option value="" disabled selected>Select a range</option>
+                  <option value="Under €5,000">Under €5,000</option>
+                  <option value="€5,000 – €10,000">€5,000 – €10,000</option>
+                  <option value="€10,000 – €15,000">€10,000 – €15,000</option>
+                  <option value="€15,000+">€15,000+</option>
+                  <option value="Not sure yet">Not sure yet</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="qh-timeline">Timeline</label>
+                <select id="qh-timeline" name="timeline" required>
+                  <option value="" disabled selected>Select a timeline</option>
+                  <option value="ASAP">ASAP</option>
+                  <option value="1–3 months">1–3 months</option>
+                  <option value="3–6 months">3–6 months</option>
+                  <option value="6–12 months">6–12 months</option>
+                  <option value="Just researching">Just researching</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group" style="margin-bottom:1rem;">
+              <label for="qh-email">Email Address</label>
+              <input type="email" id="qh-email" name="email" placeholder="you@example.com" required autocomplete="email">
+            </div>
+            <div class="form-group" style="margin-bottom:0;">
+              <label for="qh-message">Tell Us About Your Project</label>
+              <textarea id="qh-message" name="message" placeholder="Type of sauna, space available, any questions…" required></textarea>
+            </div>
+            <div class="form-submit">
+              <button type="submit" class="btn btn-form">Send My Free Quote Request</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ FAQ ══ -->
+  <section class="section" aria-labelledby="faq-h2">
+    <div class="section__container">
+      <header class="section__header">
+        <span class="eyebrow">Questions &amp; Answers</span>
+        <h2 id="faq-h2">Everything You Want to Know About Home Saunas</h2>
+        <p>Straight answers to the questions we hear most often. Still not sure? Just call us.</p>
+      </header>
+      <div class="faq-list" role="list">
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-item__question">How much does a home sauna cost in Ireland?</summary>
+          <p class="faq-item__answer">Home sauna costs in Ireland vary widely depending on size, materials, and complexity. A compact indoor cabin sauna typically starts from around €4,000–€7,000 fully installed. A mid-range custom build with premium timber and integrated controls usually falls in the €8,000–€15,000 range. Larger bespoke outdoor saunas or full steam rooms can range from €15,000 upwards. Our pre-built barrel saunas start from €4,400. We provide fully itemised free quotes, so you know exactly what you are getting before any work begins.</p>
+        </details>
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-item__question">Do I need planning permission for a home sauna in Ireland?</summary>
+          <p class="faq-item__answer">In most cases, a residential sauna — particularly an indoor installation or a modest outdoor structure — falls within normal exempted development under Irish planning regulations. However, this depends on the size of the structure, its proximity to boundaries, and your local authority's specific rules. We advise all clients on this during the design consultation and, where required, can guide you through the appropriate process.</p>
+        </details>
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-item__question">What types of sauna do you build?</summary>
+          <p class="faq-item__answer">We design and build a full range of home saunas: traditional Finnish dry saunas, infrared saunas, barrel saunas, outdoor cabin saunas, and full steam rooms. We also offer a range of pre-built barrel saunas ready to order. Every custom sauna is bespoke — designed around your space, your lifestyle, and the finishes you love. We work with premium cedar, thermowood, and other natural timbers suited to the Irish climate.</p>
+        </details>
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-item__question">How long does it take to build a home sauna?</summary>
+          <p class="faq-item__answer">Timelines depend on the scope of work. A straightforward indoor sauna installation typically takes between three and seven days on site. A larger custom outdoor structure can take one to three weeks. Pre-built barrel saunas are typically the fastest option, since the unit itself is ready to order and simply needs to be delivered and sited. We will give you a clear project timeline at the design stage, and our team keeps disruption to your home to an absolute minimum throughout.</p>
+        </details>
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-item__question">Do you install saunas outside of Galway?</summary>
+          <p class="faq-item__answer">Yes. While we are based in Galway, Wild Heat Saunas works across all of Ireland — Leinster, Munster, Connacht, and Ulster. We have installed home saunas from Cork to Donegal, Dublin to Clifden. Travel costs may apply for certain areas; we will be transparent about this in your quote.</p>
+        </details>
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-item__question">Are your saunas fully custom, or do you sell pre-made kits?</summary>
+          <p class="faq-item__answer">We offer both. Our custom saunas are designed and constructed specifically for you — tailored to your dimensions, your timber preference, your heating system, and your aesthetic vision. We also stock a range of quality pre-built barrel saunas in five sizes, in pinewood or thermowood, for clients who want a faster turnaround at a lower price point.</p>
+        </details>
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-item__question">What heating systems do you use?</summary>
+          <p class="faq-item__answer">We install a range of sauna heating systems to suit different preferences and budgets, including traditional wood-burning kiuas, electric sauna heaters, and infrared panels. Our pre-built barrel saunas come with an electric Harvia 9kW stove as standard, with a wood-burning stove upgrade available. We work with market-leading heater brands known for reliability and efficiency, and will advise on the most suitable option for your chosen sauna type and usage habits during the design consultation.</p>
+        </details>
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-item__question">What timber do you use for your saunas?</summary>
+          <p class="faq-item__answer">We primarily work with Western Red Cedar — prized for its natural thermal resistance, low resin content, and beautiful warm tone that deepens with age. We also use thermowood (heat-treated timber), Nordic spruce, and aspen depending on the application and client preference. Our pre-built barrel saunas are available in pinewood or thermowood. All timber is responsibly sourced. We will walk you through the options at your consultation so you can choose what suits your space and taste.</p>
+        </details>
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-item__question">Is Wild Heat Saunas fully insured?</summary>
+          <p class="faq-item__answer">Yes. Wild Heat Saunas carries full public liability insurance and all of our installation work is carried out to the highest professional standards. We are happy to provide proof of insurance on request before any work commences.</p>
+        </details>
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-item__question">What is the process from first contact to completed sauna?</summary>
+          <p class="faq-item__answer">The journey starts with a free consultation — either on-site in Galway and surrounds, or by video for clients further afield. We then produce a bespoke design and fully itemised quotation, or point you to the right pre-built model. Once you are happy to proceed, we schedule your build or delivery. Our team handles everything: groundwork (if required), framing, insulation, cladding, heater installation, and finishing. We hand over a completed, tested sauna ready for its first session — and stay available after handover if you have questions.</p>
+        </details>
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-item__question">What are the health benefits of a home sauna?</summary>
+          <p class="faq-item__answer">Regular sauna use is widely associated with a range of wellbeing benefits, including improved cardiovascular circulation, muscle recovery after exercise, stress relief, better sleep quality, and skin health. Having a sauna at home means you can build a consistent wellness habit without the need to travel to a gym or spa. We always recommend consulting your GP if you have any underlying health conditions.</p>
+        </details>
+
+        <details class="faq-item" role="listitem">
+          <summary class="faq-item__question">How do I get a quote for a home sauna?</summary>
+          <p class="faq-item__answer">Simply fill in the quick quote form on this page, or call us directly on <a href="tel:+353876712695" style="color:var(--pd-teal); font-weight:600; text-decoration:none;">087 671 2695</a>. We respond to all enquiries promptly and without any pressure or obligation. Just an honest conversation about what is possible for your home and budget.</p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ STICKY MOBILE CTA BAR ══ -->
+  <nav class="mobile-cta-bar" aria-label="Quick contact options">
+    <a href="tel:+353876712695">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.81 19.79 19.79 0 01.02 2.2 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+      Call
+    </a>
+    <a href="https://wa.me/353876712695" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      WhatsApp
+    </a>
+    <a href="/contact/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      Free Quote
+    </a>
+  </nav>
+
+</div>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+{% endblock %}
