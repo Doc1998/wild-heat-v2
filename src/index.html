@@ -614,6 +614,20 @@ eleventyNavigation:
   }
 
   /* ── PRE-BUILT SAUNAS: TABLE ── */
+  .wild-heat-saunas-home .prebuilt-table-hint {
+    display: none;
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--pd-slate-mid);
+    margin-bottom: 0.7rem;
+  }
+
+  @media (max-width: 640px) {
+    .wild-heat-saunas-home .prebuilt-table-hint {
+      display: block;
+    }
+  }
+
   .wild-heat-saunas-home .prebuilt-table-wrap {
     overflow-x: auto;
     margin-bottom: 2.5rem;
@@ -624,7 +638,7 @@ eleventyNavigation:
 
   .wild-heat-saunas-home .prebuilt-table {
     width: 100%;
-    min-width: 640px;
+    min-width: 460px;
     border-collapse: collapse;
     background: var(--pd-white);
     font-size: 0.88rem;
@@ -643,9 +657,11 @@ eleventyNavigation:
     text-align: left;
     position: sticky;
     left: 0;
+    z-index: 1;
     background: var(--pd-white);
     font-weight: 600;
     color: var(--pd-slate);
+    box-shadow: 2px 0 6px rgba(20, 17, 13, 0.08);
   }
 
   .wild-heat-saunas-home .prebuilt-table thead th {
@@ -660,6 +676,7 @@ eleventyNavigation:
   .wild-heat-saunas-home .prebuilt-table thead th:first-child {
     background: var(--pd-primary);
     color: var(--pd-white);
+    box-shadow: 2px 0 6px rgba(20, 17, 13, 0.2);
   }
 
   .wild-heat-saunas-home .prebuilt-table thead .prebuilt-table__capacity {
@@ -699,11 +716,53 @@ eleventyNavigation:
 
   .wild-heat-saunas-home .prebuilt-table tfoot td:first-child {
     background: var(--pd-warm-white);
+    box-shadow: 2px 0 6px rgba(20, 17, 13, 0.08);
   }
 
   .wild-heat-saunas-home .prebuilt-table .btn {
     font-size: 0.72rem;
     padding: 0.6rem 1rem;
+  }
+
+  @media (max-width: 640px) {
+    .wild-heat-saunas-home .prebuilt-table-wrap {
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .wild-heat-saunas-home .prebuilt-table {
+      min-width: 0;
+      font-size: 0.76rem;
+    }
+
+    .wild-heat-saunas-home .prebuilt-table th,
+    .wild-heat-saunas-home .prebuilt-table td {
+      padding: 0.6rem 0.65rem;
+    }
+
+    .wild-heat-saunas-home .prebuilt-table thead th {
+      font-size: 0.82rem;
+      padding-top: 0.75rem;
+    }
+
+    .wild-heat-saunas-home .prebuilt-table th:first-child,
+    .wild-heat-saunas-home .prebuilt-table td:first-child {
+      min-width: 92px;
+      white-space: normal;
+    }
+
+    .wild-heat-saunas-home .prebuilt-table th:not(:first-child),
+    .wild-heat-saunas-home .prebuilt-table td:not(:first-child) {
+      min-width: 68px;
+    }
+
+    .wild-heat-saunas-home .prebuilt-table .prebuilt-table__price {
+      font-size: 0.85rem;
+    }
+
+    .wild-heat-saunas-home .prebuilt-table .btn {
+      font-size: 0.62rem;
+      padding: 0.45rem 0.6rem;
+    }
   }
 
   /* ── PRE-BUILT SAUNAS: PHOTO STRIP ── */
@@ -1774,6 +1833,7 @@ eleventyNavigation:
         <h2 id="prebuilt-h2">Pre-Built Barrel Saunas</h2>
         <p>Quality barrel saunas in five sizes, ready to order in pinewood or thermowood. Every unit includes an electric Harvia 9kW stove, sauna stones, black alder benches, tempered glass door, and a bitumen shingle roof as standard.</p>
       </header>
+      <p class="prebuilt-table-hint">Swipe to compare all sizes →</p>
       <div class="prebuilt-table-wrap">
         <table class="prebuilt-table">
           <thead>
@@ -1969,7 +2029,7 @@ eleventyNavigation:
               </div>
             </div>
             <div class="form-row">
-              <div class="form-group">
+                <div class="form-group">
                 <label for="qh-budget">Service Required</label>
                 <select id="qh-budget" name="budget" required>
                   <option value="" disabled selected>Select an option</option>
@@ -2094,7 +2154,7 @@ eleventyNavigation:
     </a>
     <a href="https://wa.me/353876712695" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-      WhatsAppw
+      WhatsApp
     </a>
     <a href="/contact/">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
