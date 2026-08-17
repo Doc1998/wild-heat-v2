@@ -320,6 +320,21 @@ permalink: '/sauna-benefits/'
     margin-top: 1rem;
   }
 
+  .wild-heat-saunas-benefits .form-status {
+    text-align: center;
+    font-size: 0.85rem;
+    margin-top: 0.9rem;
+    min-height: 1.1em;
+  }
+
+  .wild-heat-saunas-benefits .form-status.is-success {
+    color: #7DD3A0;
+  }
+
+  .wild-heat-saunas-benefits .form-status.is-error {
+    color: #E8927C;
+  }
+
   /* ── SOCIAL PROOF STRIP ── */
   .wild-heat-saunas-benefits .proof-strip {
     background: var(--pd-warm-white);
@@ -627,9 +642,9 @@ permalink: '/sauna-benefits/'
         </li>
       </ul>
 
-      <form name="quote-benefits" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="quote-form">
-        <input type="hidden" name="form-name" value="quote-benefits">
-        <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
+      <form id="quote-benefits-form" method="POST" class="quote-form">
+        <p hidden><label>Don't fill this out: <input name="bot-field" autocomplete="off"></label></p>
+        <input type="hidden" name="source" value="sauna-benefits-landing-page">
         <h2>Get Your Free Quote</h2>
         <div class="form-row">
           <div class="form-group">
@@ -661,8 +676,9 @@ permalink: '/sauna-benefits/'
           <input type="email" id="qb-email" name="email" placeholder="you@example.com" required autocomplete="email">
         </div>
         <button type="submit" class="btn-form">Get My Free Quote</button>
+        <p id="qb-form-status" class="form-status" role="status" aria-live="polite"></p>
       </form>
-      <p class="form-microcopy">🔒 No obligation. We'll be in touch within one working day.</p>
+      <p class="form-microcopy" id="qb-form-microcopy">🔒 No obligation. We'll be in touch within one working day.</p>
     </div>
   </section>
 
@@ -815,4 +831,63 @@ permalink: '/sauna-benefits/'
   </div>
 
 </div>
+
+<script>
+  // ── Zapier webhook submission ──
+  // 1. In Zapier, create a Zap with trigger "Webhooks by Zapier" → "Catch Hook".
+  // 2. Copy the Catch Hook URL Zapier gives you and paste it below.
+  // 3. Test: submit this form once, then in Zapier click "Find Data" — your
+  //    submission should appear so you can map fields into the next step
+  //    (e.g. send to GHL, Google Sheets, email, Slack).
+  const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/17860884/4ttgw90/';
+
+  (function () {
+    const form = document.getElementById('quote-benefits-form');
+    if (!form) return;
+    const statusEl = document.getElementById('qb-form-status');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Honeypot spam check — bots fill hidden fields, real users don't
+      if (form.elements['bot-field'] && form.elements['bot-field'].value) {
+        return;
+      }
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const formData = new FormData(form);
+      const payload = {};
+      formData.forEach(function (value, key) {
+        if (key !== 'bot-field') payload[key] = value;
+      });
+      payload.page_url = window.location.href;
+      payload.submitted_at = new Date().toISOString();
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      statusEl.textContent = '';
+      statusEl.className = 'form-status';
+
+      fetch(ZAPIER_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+        .then(function (response) {
+          if (!response.ok) throw new Error('Request failed');
+          form.reset();
+          statusEl.textContent = "Thanks! We've got your details and will be in touch within one working day.";
+          statusEl.className = 'form-status is-success';
+          submitBtn.textContent = 'Get My Free Quote';
+          submitBtn.disabled = false;
+        })
+        .catch(function () {
+          statusEl.textContent = 'Something went wrong — please call us on 087 671 2695 instead.';
+          statusEl.className = 'form-status is-error';
+          submitBtn.textContent = 'Get My Free Quote';
+          submitBtn.disabled = false;
+        });
+    });
+  })();
+</script>
 {% endblock %}

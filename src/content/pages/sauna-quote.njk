@@ -588,6 +588,21 @@ permalink: '/sauna-quote/'
     margin-top: 1rem;
   }
 
+  .wild-heat-saunas-landing .form-status {
+    text-align: center;
+    font-size: 0.85rem;
+    margin-top: 0.9rem;
+    min-height: 1.1em;
+  }
+
+  .wild-heat-saunas-landing .form-status.is-success {
+    color: #7DD3A0;
+  }
+
+  .wild-heat-saunas-landing .form-status.is-error {
+    color: #E8927C;
+  }
+
   /* ── STICKY MOBILE CTA ── */
   .wild-heat-saunas-landing .mobile-cta-bar {
     position: fixed;
@@ -864,9 +879,9 @@ permalink: '/sauna-quote/'
         <p>Takes less than a minute. No obligation — we'll be in touch within one working day.</p>
       </header>
 
-      <form name="quote-landing" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="quote-form">
-        <input type="hidden" name="form-name" value="quote-landing">
-        <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
+      <form id="quote-landing-form" method="POST" class="quote-form">
+        <p hidden><label>Don't fill this out: <input name="bot-field" autocomplete="off"></label></p>
+        <input type="hidden" name="source" value="sauna-quote-landing-page">
         <div class="form-row">
           <div class="form-group">
             <label for="ql-name">Full Name</label>
@@ -897,6 +912,7 @@ permalink: '/sauna-quote/'
           <input type="email" id="ql-email" name="email" placeholder="you@example.com" required autocomplete="email">
         </div>
         <button type="submit" class="btn btn-form">Get My Free Quote</button>
+        <p id="ql-form-status" class="form-status" role="status" aria-live="polite"></p>
       </form>
       <p class="form-microcopy">🔒 Your details are safe with us. No spam, ever.</p>
     </div>
@@ -908,4 +924,58 @@ permalink: '/sauna-quote/'
   </div>
 
 </div>
+
+<script>
+  // ── Zapier webhook submission ──
+  const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/17860884/4ttgw90/';
+
+  (function () {
+    const form = document.getElementById('quote-landing-form');
+    if (!form) return;
+    const statusEl = document.getElementById('ql-form-status');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Honeypot spam check — bots fill hidden fields, real users don't
+      if (form.elements['bot-field'] && form.elements['bot-field'].value) {
+        return;
+      }
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const formData = new FormData(form);
+      const payload = {};
+      formData.forEach(function (value, key) {
+        if (key !== 'bot-field') payload[key] = value;
+      });
+      payload.page_url = window.location.href;
+      payload.submitted_at = new Date().toISOString();
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      statusEl.textContent = '';
+      statusEl.className = 'form-status';
+
+      fetch(ZAPIER_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+        .then(function (response) {
+          if (!response.ok) throw new Error('Request failed');
+          form.reset();
+          statusEl.textContent = "Thanks! We've got your details and will be in touch within one working day.";
+          statusEl.className = 'form-status is-success';
+          submitBtn.textContent = 'Get My Free Quote';
+          submitBtn.disabled = false;
+        })
+        .catch(function () {
+          statusEl.textContent = 'Something went wrong — please call us on 087 671 2695 instead.';
+          statusEl.className = 'form-status is-error';
+          submitBtn.textContent = 'Get My Free Quote';
+          submitBtn.disabled = false;
+        });
+    });
+  })();
+</script>
 {% endblock %}
