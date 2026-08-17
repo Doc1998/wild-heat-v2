@@ -890,6 +890,9 @@ permalink: '/sauna-benefits/'
         .then(function (response) {
           if (!response.ok) throw new Error('Request failed');
           form.reset();
+          if (typeof fbq === 'function') {
+            fbq('track', 'Lead');
+          }
           statusEl.textContent = "Thanks! We've got your details and will be in touch within one working day.";
           statusEl.className = 'form-status is-success';
           submitBtn.textContent = 'Get My Free Quote';
