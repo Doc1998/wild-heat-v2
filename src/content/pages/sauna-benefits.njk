@@ -877,6 +877,10 @@ permalink: '/sauna-benefits/'
       formData.delete('bot-field');
       formData.append('page_url', window.location.href);
       formData.append('submitted_at', new Date().toISOString());
+      const params = new URLSearchParams();
+      formData.forEach(function (value, key) {
+        params.append(key, value);
+      });
 
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending...';
@@ -885,7 +889,8 @@ permalink: '/sauna-benefits/'
 
       fetch(ZAPIER_WEBHOOK_URL, {
         method: 'POST',
-        body: formData
+        body: params,
+        keepalive: true
       })
         .then(function (response) {
           if (!response.ok) throw new Error('Request failed');
