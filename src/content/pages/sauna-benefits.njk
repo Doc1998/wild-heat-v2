@@ -1,6 +1,6 @@
 ---
 title: 'Why Get a Home Sauna? | Wild Heat Saunas'
-description: 'The benefits of owning a home sauna — wellness, recovery, and your own retreat, delivered and installed anywhere in Ireland. Get your free quote today.'
+description: 'The benefits of owning a home sauna, installed by qualified tradesmen anywhere in Ireland. Wellness, recovery and your own retreat. Get your free quote today.'
 preloadImg: '/assets/images/barrel-sauna1.jpeg'
 permalink: '/sauna-benefits/'
 ---
@@ -212,7 +212,35 @@ permalink: '/sauna-benefits/'
     text-align: center;
     color: rgba(255,255,255,0.78);
     font-size: 0.98rem;
-    margin-bottom: 1.6rem;
+    margin-bottom: 1.4rem;
+  }
+
+  /* Installer badge in hero */
+  .wild-heat-saunas-benefits .installer-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.45rem;
+    background: var(--pd-white);
+    border-radius: 10px;
+    padding: 0.75rem 1.2rem 0.9rem;
+    max-width: 290px;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+  }
+
+  .wild-heat-saunas-benefits .installer-badge__label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--pd-slate-mid);
+    letter-spacing: 0.03em;
+  }
+
+  .wild-heat-saunas-benefits .installer-badge img {
+    display: block;
+    width: 100%;
+    max-width: 240px;
+    height: auto;
   }
 
   .wild-heat-saunas-benefits .hero-form-section__trust {
@@ -398,6 +426,10 @@ permalink: '/sauna-benefits/'
     background: var(--pd-off-white);
   }
 
+  .wild-heat-saunas-benefits .section--white {
+    background: var(--pd-white);
+  }
+
   .wild-heat-saunas-benefits .section__container {
     max-width: 1080px;
     margin: 0 auto;
@@ -419,6 +451,80 @@ permalink: '/sauna-benefits/'
   .wild-heat-saunas-benefits .section__header p {
     color: var(--pd-slate-mid);
     font-size: 0.98rem;
+  }
+
+  /* ── INSTALLER SECTION (Donnellan Carpentry) ── */
+  .wild-heat-saunas-benefits .installer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .wild-heat-saunas-benefits .installer__logo-card {
+    background: var(--pd-warm-white);
+    border: 1px solid rgba(160, 98, 42, 0.18);
+    border-radius: var(--pd-radius-card);
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: var(--pd-shadow-warm);
+  }
+
+  .wild-heat-saunas-benefits .installer__logo-card img {
+    display: block;
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+  }
+
+  .wild-heat-saunas-benefits .installer__logo-card p {
+    font-size: 0.85rem;
+    color: var(--pd-slate-mid);
+    text-align: center;
+  }
+
+  .wild-heat-saunas-benefits .installer__body h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    margin-bottom: 0.9rem;
+  }
+
+  .wild-heat-saunas-benefits .installer__body > p {
+    color: var(--pd-slate);
+    font-size: 0.98rem;
+    margin-bottom: 1.4rem;
+    max-width: 520px;
+  }
+
+  .wild-heat-saunas-benefits .installer__checks {
+    list-style: none;
+    display: grid;
+    gap: 0.75rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .wild-heat-saunas-benefits .installer__checks li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    font-size: 0.95rem;
+    color: var(--pd-primary);
+    font-weight: 500;
+  }
+
+  .wild-heat-saunas-benefits .installer__checks svg {
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+    color: var(--pd-cedar);
+  }
+
+  @media (min-width: 780px) {
+    .wild-heat-saunas-benefits .installer {
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 3.5rem;
+    }
   }
 
   /* ── BENEFIT ROWS (side-by-side, alternating) ── */
@@ -605,7 +711,7 @@ permalink: '/sauna-benefits/'
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Wild Heat Saunas",
-  "description": "Wild Heat Saunas designs and builds luxury custom home saunas, plus quality pre-built barrel saunas, across Ireland.",
+  "description": "Wild Heat Saunas designs and builds luxury custom home saunas, plus quality pre-built barrel saunas, installed by qualified tradesmen across Ireland.",
   "url": "https://wildheatsaunas.ie/sauna-benefits/",
   "telephone": "+353876712695",
   "address": {
@@ -629,7 +735,7 @@ permalink: '/sauna-benefits/'
 
   <!-- ══ MINIMAL TOP BAR ── phone only, no nav to avoid distracting from the CTA ══ -->
   <div class="landing-topbar">
-    <a href="tel:+353876712695">📞 Call Us Now — 087 671 2695</a>
+    <a href="tel:+353876712695">📞 Call Us Now: 087 671 2695</a>
   </div>
 
   <!-- ══ HERO + FORM (above the fold) ══ -->
@@ -639,16 +745,25 @@ permalink: '/sauna-benefits/'
     <div class="hero-form-section__inner">
       <div class="hero-form-section__logo">WILD HEAT SAUNAS</div>
       <h1 id="hero-h1">Why Ireland Is Falling for the <em>Home Sauna</em></h1>
-      <p class="hero-form-section__sub">Fully insured, five-star rated, and backed by a 5 year warranty. Delivered and installed anywhere in Ireland.</p>
+      <p class="hero-form-section__sub">Installed by qualified tradesmen, not left as a flatpack. Fully insured, five-star rated and backed by a 5 year warranty, anywhere in Ireland.</p>
+
+      <div class="installer-badge">
+        <span class="installer-badge__label">Every sauna installed by</span>
+        <img src="/assets/images/donnellan-carpentry-logo.png" alt="Donnellan Carpentry" width="1030" height="189">
+      </div>
 
       <ul class="hero-form-section__trust" aria-label="Key trust points">
         <li>
           <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="10" fill="rgba(217, 118, 32, 0.25)"/><path d="M6 10.5l3 3 5-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          5-Star on Google
+          Qualified Tradesmen
         </li>
         <li>
           <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="10" fill="rgba(217, 118, 32, 0.25)"/><path d="M6 10.5l3 3 5-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Fully Insured
+        </li>
+        <li>
+          <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="10" fill="rgba(217, 118, 32, 0.25)"/><path d="M6 10.5l3 3 5-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          5-Star on Google
         </li>
         <li>
           <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="10" fill="rgba(217, 118, 32, 0.25)"/><path d="M6 10.5l3 3 5-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -717,10 +832,46 @@ permalink: '/sauna-benefits/'
       </div>
       <div class="proof-stat">
         <strong>100%</strong>
-        <span>Insured &amp; Irish-Built</span>
+        <span>Tradesman Installed</span>
       </div>
     </div>
   </div>
+
+  <!-- ══ INSTALLED BY QUALIFIED TRADESMEN ══ -->
+  <section class="section section--white" aria-labelledby="installer-h2">
+    <div class="section__container">
+      <div class="installer">
+        <div class="installer__logo-card">
+          <img src="/assets/images/donnellan-carpentry-logo.png" alt="Donnellan Carpentry logo" width="1030" height="189" loading="lazy">
+          <p>Our installation partner on every Wild Heat sauna</p>
+        </div>
+        <div class="installer__body">
+          <span class="eyebrow">Proper Installation</span>
+          <h2 id="installer-h2">Installed by Qualified Tradesmen, Not Left in Your Driveway</h2>
+          <p>A lot of saunas sold in Ireland arrive as a flatpack with an instruction sheet. Ours don't. Every Wild Heat sauna is fitted on site by the qualified carpenters at Donnellan Carpentry, so it's sited properly, built square and ready to use when they leave.</p>
+          <ul class="installer__checks">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="10" fill="rgba(160, 98, 42, 0.15)"/><path d="M6 10.5l3 3 5-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Qualified carpenters on every installation
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="10" fill="rgba(160, 98, 42, 0.15)"/><path d="M6 10.5l3 3 5-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Fully insured work on your property
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="10" fill="rgba(160, 98, 42, 0.15)"/><path d="M6 10.5l3 3 5-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Sauna sited, levelled and assembled properly
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="10" fill="rgba(160, 98, 42, 0.15)"/><path d="M6 10.5l3 3 5-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Heater fitted and tested before they leave
+            </li>
+          </ul>
+          <a href="#top" class="btn btn-primary" onclick="document.querySelector('.hero-form-section').scrollIntoView({behavior:'smooth'}); return false;">Get My Free Quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ══ BENEFITS ══ -->
   <section class="section" aria-labelledby="benefits-h2">
@@ -728,7 +879,7 @@ permalink: '/sauna-benefits/'
       <header class="section__header">
         <span class="eyebrow eyebrow--cedar">Why a Home Sauna</span>
         <h2 id="benefits-h2">What You Get With Wild Heat</h2>
-        <p>Real reasons Irish homeowners are adding a sauna — from the wellness upside to the finish quality.</p>
+        <p>Real reasons Irish homeowners are adding a sauna, from the wellness upside to the finish quality.</p>
       </header>
 
       <div class="benefit-row" aria-label="Your own wellness retreat">
@@ -738,7 +889,7 @@ permalink: '/sauna-benefits/'
         <div class="benefit-row__body">
           <span class="benefit-row__num" aria-hidden="true">1</span>
           <h3>Your Own Wellness Retreat, At Home</h3>
-          <p>No more booking slots or driving to a gym or spa. Your sauna is a few steps from your back door, ready whenever you are — morning, evening, or a cold Sunday afternoon.</p>
+          <p>No more booking slots or driving to a gym or spa. Your sauna is a few steps from your back door, ready whenever you are: morning, evening, or a cold Sunday afternoon.</p>
         </div>
       </div>
 
@@ -755,12 +906,12 @@ permalink: '/sauna-benefits/'
 
       <div class="benefit-row" aria-label="Craftsmanship and build quality">
         <div class="benefit-row__image">
-          <img src="/assets/images/sauna-build1.jpeg" alt="Wild Heat Saunas build in progress" loading="lazy">
+          <img src="/assets/images/sauna-build1.jpeg" alt="Donnellan Carpentry installing a Wild Heat sauna" loading="lazy">
         </div>
         <div class="benefit-row__body">
           <span class="benefit-row__num" aria-hidden="true">3</span>
           <h3>Built Properly, By Qualified Tradesmen</h3>
-          <p>Every sauna is built by an experienced, fully insured Irish team — not a flatpack you're left to assemble yourself. Premium timber, a proper stove, and a finish that holds up to the Irish climate.</p>
+          <p>Every sauna is installed by the qualified carpenters at Donnellan Carpentry, an experienced and fully insured Irish team. Not a flatpack you're left to assemble yourself. Premium timber, a proper stove, and a finish that holds up to the Irish climate.</p>
         </div>
       </div>
 
@@ -771,7 +922,7 @@ permalink: '/sauna-benefits/'
         <div class="benefit-row__body">
           <span class="benefit-row__num" aria-hidden="true">4</span>
           <h3>Pair It With a Cold Plunge</h3>
-          <p>Heat, then cold. Many of our clients add a cold plunge alongside their sauna for the full contrast therapy experience — we can spec this in at the design stage.</p>
+          <p>Heat, then cold. Many of our clients add a cold plunge alongside their sauna for the full contrast therapy experience. We can spec this in at the design stage.</p>
         </div>
       </div>
 
@@ -782,7 +933,7 @@ permalink: '/sauna-benefits/'
         <div class="benefit-row__body">
           <span class="benefit-row__num" aria-hidden="true">5</span>
           <h3>Installed &amp; Working the Same Day</h3>
-          <p>No weeks of waiting around. Our pre-built barrel saunas are delivered, sited, and fully installed in a single day — heater fitted, tested, and ready to use before we leave. From delivery to your first heat session, all in one visit.</p>
+          <p>No weeks of waiting around. Our pre-built barrel saunas are delivered, sited, and fully installed by our tradesmen in a single day, with the heater fitted, tested, and ready to use before they leave. From delivery to your first heat session, all in one visit.</p>
         </div>
       </div>
 
@@ -793,7 +944,7 @@ permalink: '/sauna-benefits/'
         <div class="benefit-row__body">
           <span class="benefit-row__num" aria-hidden="true">6</span>
           <h3>Backed By a 5 Year Warranty</h3>
-          <p>Every sauna we deliver is covered by a full 5 year warranty, so you can enjoy it without worrying about the build quality. If something's not right, we sort it — no small print, no runaround.</p>
+          <p>Every sauna we deliver is covered by a full 5 year warranty, so you can enjoy it without worrying about the build quality. If something's not right, we sort it. No small print, no runaround.</p>
         </div>
       </div>
     </div>
@@ -805,7 +956,7 @@ permalink: '/sauna-benefits/'
       <header class="section__header">
         <span class="eyebrow eyebrow--cedar">Real Builds</span>
         <h2 id="gallery-h2">See Our Saunas in Real Irish Homes</h2>
-        <p>Barrel saunas, interiors, cold plunges, and finished installs — all delivered across Ireland.</p>
+        <p>Barrel saunas, interiors, cold plunges, and finished installs, all delivered across Ireland.</p>
       </header>
       <div class="mini-gallery" role="list">
         <figure role="listitem">
@@ -839,7 +990,7 @@ permalink: '/sauna-benefits/'
   <!-- ══ MID-PAGE CTA ══ -->
   <div class="mid-cta">
     <h2>Ready to Get Started?</h2>
-    <p>Fill in the quick form above and we'll be in touch within one working day with your free, no-obligation quote.</p>
+    <p>Fill in the quick form above and we'll be in touch within one working day with your free, no-obligation quote. Every sauna is installed by qualified tradesmen.</p>
     <a href="#top" class="btn btn-primary" onclick="document.querySelector('.hero-form-section').scrollIntoView({behavior:'smooth'}); return false;">Get My Free Quote</a>
   </div>
 
@@ -904,7 +1055,7 @@ permalink: '/sauna-benefits/'
           submitBtn.disabled = false;
         })
         .catch(function () {
-          statusEl.textContent = 'Something went wrong — please call us on 087 671 2695 instead.';
+          statusEl.textContent = 'Something went wrong. Please call us on 087 671 2695 instead.';
           statusEl.className = 'form-status is-error';
           submitBtn.textContent = 'Get My Free Quote';
           submitBtn.disabled = false;
