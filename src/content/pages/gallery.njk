@@ -277,7 +277,7 @@ eleventyNavigation:
 
 {% set galleryCategories = [
   { slug: "barrel-sauna", label: "Barrel Saunas", count: 47, ext: "jpeg", alt: "Wild Heat Saunas barrel sauna" },
-  { slug: "sauna-interior", label: "Sauna Interiors", count: 18, ext: "jpeg", alt: "Sauna interior with benches and stove" },
+  { slug: "sauna-interior", label: "Sauna Interiors", count: 18, ext: "jpeg", alt: "Sauna interior with benches and stove", skip: [13] },
   { slug: "hot-tub", label: "Cold Plunges", count: 9, ext: "jpeg", alt: "Cold plunge tub" },
   { slug: "cabin-sauna", label: "Cabin Saunas", count: 5, ext: "jpeg", alt: "Cabin-style sauna" },
   { slug: "trailer-mobile-sauna", label: "Mobile Trailer Saunas", count: 2, ext: "jpeg", alt: "Mobile sauna trailer unit" },
@@ -308,6 +308,7 @@ eleventyNavigation:
       <div class="gallery-grid">
         {% for cat in galleryCategories %}
           {% for i in range(1, cat.count + 1) %}
+          {% if i not in (cat.skip or []) %}
           <figure class="gallery-item" data-category="{{ cat.slug }}">
             <a href="/assets/images/{{ cat.slug }}{{ i }}.{{ cat.ext }}" data-lightbox>
               <img
@@ -319,6 +320,7 @@ eleventyNavigation:
               >
             </a>
           </figure>
+          {% endif %}
           {% endfor %}
         {% endfor %}
       </div>
