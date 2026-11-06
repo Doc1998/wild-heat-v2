@@ -16,5 +16,5 @@ module.exports = {
         "facebook": "",
         "instagram": ""
     },
-    "domain": "wildheatsaunas.ie"
+    "domain": "https://wildheatsaunas.ie"
 };
